@@ -17,7 +17,7 @@ const Banner = () => {
             <Swiper
                 spaceBetween={30}
                 effect={"fade"}
-                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
                 navigation={true}
                 pagination={{ clickable: true }}
                 modules={[Autoplay,  Navigation, Pagination]}

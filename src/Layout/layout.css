@@ -1,11 +1,12 @@
-/* .layout{
-    background-color:#ffc599;
+ 
+.layout{
+ background-color:hsla(171,0%,100%,1);
 background-image:
-radial-gradient(at 42% 34%, hsla(350,91%,69%,1) 0px, transparent 50%),
-radial-gradient(at 78% 54%, hsla(22,74%,60%,1) 0px, transparent 50%),
-radial-gradient(at 33% 4%, hsla(122,65%,76%,1) 0px, transparent 50%),
-radial-gradient(at 48% 91%, hsla(160,89%,63%,1) 0px, transparent 50%),
-radial-gradient(at 31% 49%, hsla(197,91%,74%,1) 0px, transparent 50%),
-radial-gradient(at 97% 74%, hsla(234,99%,70%,1) 0px, transparent 50%),
-radial-gradient(at 97% 13%, hsla(248,71%,60%,1) 0px, transparent 50%);
-} */
+radial-gradient(at 33% 64%, hsla(70,92%,75%,1) 0px, transparent 50%),
+radial-gradient(at 4% 90%, hsla(2,80%,77%,1) 0px, transparent 50%),
+radial-gradient(at 23% 94%, hsla(240,56%,91%,1) 0px, transparent 50%),
+radial-gradient(at 5% 59%, hsla(294,100%,89%,1) 0px, transparent 50%),
+radial-gradient(at 87% 81%, hsla(6,69%,74%,1) 0px, transparent 50%),
+radial-gradient(at 93% 41%, hsla(0,55%,91%,1) 0px, transparent 50%),
+radial-gradient(at 65% 48%, hsla(62,69%,50%,1) 0px, transparent 50%);
+}
