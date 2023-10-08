@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Navbar/navbar.css'
 import { Link } from 'react-router-dom';
-const CategoryCard = ({name}) => {
+
+
+
+const CategoryCard = ({ data }) => {
+    
+    const [toysData, setToysData] = useState([])
+    
     return (
-        <Link className='text-center mt-11 shadow-xl border p-8 rounded-lg backDrp hover:scale-105 duration-100'>
+        <Link to={`${data.category}`} className='text-center mt-11 shadow-xl p-8 rounded-lg backDrp hover:scale-105 duration-100'>
             <div className="avatar">
                 <div className="w-48 mask mask-squircle">
-                    <img src="https://i.ibb.co/WtxBqv4/1696676380816.jpg" />
+                    <img loading='lazy' src={data.img} />
                 </div>
             </div>    
-                <h1 className='text-xl font-semibold'>{name}</h1> 
+            <h1 className='text-xl font-semibold'>{data.name}</h1> 
         </Link>
     );
 };

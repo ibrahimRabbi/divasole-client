@@ -2,14 +2,15 @@ import React from 'react';
 import Button from '../UI/Button';
 import './navbar.css'
 import { BsCart3 } from 'react-icons/bs'
+import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
-        <nav className='py-2 fixed z-50 navbar backDrp'>
+        <nav className='py-2 fixed z-30 navbar backDrp'>
             <div className='w-[90%] flex justify-between items-center mx-auto'>
                 {/* fast div */}
-                <div>
+                <Link to='/'>
                     <img width={170} loading='lazy' src="https://i.ibb.co/B39k2dx/1696674199331-removebg-preview.png" alt="LOGO" />
-                </div>
+                </Link>
 
                 {/* middle div */}
 
