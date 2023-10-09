@@ -1,34 +1,64 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Swal from 'sweetalert2';
-import Button from '../UI/Button';
 import './single.css'
+
+
+import {useIdDataQuery } from '../redux/baseApi/baseApi';
+import { Roller } from 'react-spinners-css';
 const SingleData = () => {
     const { id } = useParams()
-    const [data, setData] = useState({})
+    const {data={},refetch,isLoading} =  useIdDataQuery(id)
     const images = [];
-    
-
-
+const navigate = useNavigate()
     data.moreImg?.forEach(v => {
         images.push({ original: v, thumbnail: v })
     })
 
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/id/${id}`)
+    const addToCartHandler = () => {
+        const addData = {
+            userMail: 'anonymous',
+            productId: id,
+            name: data.name,
+            price: data.price,
+            image: data.image
+        }
+        fetch(`http://localhost:5000/cart`, {
+            method: "POST",
+            headers: { 'content-type': 'application/json' },
+            body : JSON.stringify(addData)
+        })
             .then(res => res.json())
-            .then(res => setData(res))
-    }, [])
-    
+            .then(res => {
+                if (res.insertedId) {
+                    Swal.fire({
+                        title: 'cart have been Added successfully',
+                        icon: 'success',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'view Cart'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            navigate('/cart')
+                        }
+                    })
+                }
+        })
+    }
+
+    if (isLoading) {
+        return <Roller className="py-48 block mx-auto" />
+    }
+
 
 
     return (
         <section className='bg' >
             <div className="w-[80%] lg:gap-16 gap-5 mx-auto py-28 grid lg:grid-cols-2">
-                <div  >
+                <div>
                     <ImageGallery
                         showFullscreenButton={false}
                         showPlayButton={false}
@@ -57,9 +87,8 @@ const SingleData = () => {
                     </div>
 
                     <div className="divider"></div>
-
                     <div className="flex gap-8 lg:mt-12 mt-5 items-center">
-                        <button className="p-2 rounded-lg text-white font-semibold bg-red-600 w-[45%]">Add To Cart</button>
+                        <button onClick={addToCartHandler} className="p-2 rounded-lg text-white font-semibold bg-red-600 w-[45%]">Add To Cart</button>
                         <button className="p-2 rounded-lg font-semibold bg-amber-400 text-slate-900 w-[45%]">
                             Buy Now
                         </button>

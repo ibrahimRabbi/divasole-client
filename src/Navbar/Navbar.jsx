@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from '../UI/Button';
 import './navbar.css'
 import { BsCart3 } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
+import { Context } from '../Authentication/AuthContext';
+
+
 const Navbar = () => {
+    const { user,signout } = useContext(Context)
+    console.log(user)
     return (
         <nav className='py-2 fixed z-30 navbar backDrp'>
             <div className='w-[90%] flex justify-between items-center mx-auto'>
@@ -32,8 +37,26 @@ const Navbar = () => {
                              <BsCart3 className='text-2xl font-bold'/>
                             <span className="badge badge-sm indicator-item bg-red-500 border-0 text-white">8</span>
                         </div>
+                    {
+                        user ?  
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 ring-1 ring-amber-400 rounded-full">
+                                        <img src={user?.photoURL} />
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content font-semibold text-zinc-950 mt-3 z-[1] p-2 shadow  backDrp22 rounded-box w-52">
+                                    <li><Link>DASHBOARD</Link></li>
+                                    <li><a>Settings</a></li>
+                                    <li><button className='text-red-600 font-bold  ' onClick={()=>signout()}>Logout</button></li>
+                                </ul>
+                               
+                            
+                        </div> : <Link to='signin' className='bg-gradient-to-l uppercase from-amber-500 to-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>SIGN IN</Link>
+                     }
+                   
+
                      
-                    <Button title='SIGN IN' />
                 </div>
             </div>
         </nav>

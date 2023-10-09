@@ -1,0 +1,15 @@
+.cart{
+    grid-template-columns: 6fr 2fr;
+}
+
+.bg{
+  background-color:#99b8ff;
+background-image:
+radial-gradient(at 46% 50%, hsla(52,96%,74%,1) 0px, transparent 50%),
+radial-gradient(at 30% 2%, hsla(345,79%,65%,1) 0px, transparent 50%),
+radial-gradient(at 81% 64%, hsla(167,79%,62%,1) 0px, transparent 50%),
+radial-gradient(at 39% 46%, hsla(179,70%,71%,1) 0px, transparent 50%),
+radial-gradient(at 56% 57%, hsla(350,82%,61%,1) 0px, transparent 50%),
+radial-gradient(at 66% 25%, hsla(104,66%,74%,1) 0px, transparent 50%),
+radial-gradient(at 32% 81%, hsla(114,63%,67%,1) 0px, transparent 50%);
+}

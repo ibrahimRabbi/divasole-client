@@ -1,9 +1,15 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
- 
 import Layout from "./Layout/Layout"
 import Home from "./Home/Home"
 import DaynamicCate from "./DaynamicCategory/DaynamicCate"
 import SingleData from "./SignleData/SingleData"
+import Payment from "./Payment/Payment"
+import { Provider } from "react-redux"
+import store from "./redux/store"
+import Cart from "./cart/Cart"
+import AuthContext from "./Authentication/AuthContext"
+import SignUp from "./Form/Signup"
+import Signin from "./Form/Signin"
 
  
 
@@ -19,22 +25,42 @@ function App() {
           element:<Home/>
         },
         {
-          path: ':id',
+          path: ':category',
           element: <DaynamicCate />,
         },
         {
           path: '/:category/:id',
           element:<SingleData/>
+        },
+        {
+          path: '/cart',
+          element:<Cart/>
         }
       ]
     },
+    {
+      path: '/payment',
+      element:<Payment/>
+    },
+    {
+      path: '/signup',
+      element: <SignUp/>
+    },
+    {
+      path: '/signin',
+      element: <Signin/>
+    }
    
   ])
    
   return (
-    <>
-       <RouterProvider router={router}/>
-    </>
+    <Provider store={store}>
+      <AuthContext>
+        <RouterProvider router={router} />
+      </AuthContext>
+    </Provider>
+     
+     
   )
 }
 

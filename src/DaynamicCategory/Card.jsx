@@ -13,7 +13,7 @@ const Card = ({ data, category }) => {
 
     return (
 
-        <div className="card backDrp card-compact h-[450px] shadow-xl">
+        <div className="card backDrp border card-compact h-[450px] shadow-xl">
             <figure>
                 <Link to={`/${category}/${_id}`}>
                     <img width={180} className='mt-20' src='https://i.ibb.co/b2r2r55/1696653667582.png' />

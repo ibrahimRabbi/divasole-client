@@ -1,0 +1,171 @@
+[
+    {
+        "name":"Marvel Iron Man 1.5ft Action figure steel toys",
+        "price": 1650,
+        "category" : "marvel",
+        "subCategory": "avengers",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":5,
+        "image": "https://i.ibb.co/NCYJJVk/f7ca98f183470ff52c2c9fc013409170.jpg",
+        "moreImg": [
+            "https://i.ibb.co/NCYJJVk/f7ca98f183470ff52c2c9fc013409170.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NCYJJVk/f7ca98f183470ff52c2c9fc013409170.jpg",
+            "https://i.ibb.co/WtxBqv4/1696676380816.jpg"
+        ]
+    },
+    {
+        "name":"Marvel Captin America 9inc Action figure metal toys",
+        "price": 2100,
+        "category" : "marvel",
+        "subCategory": "avengers",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":5,
+        "image": "https://i.ibb.co/WtxBqv4/1696676380816.jpg",
+        "moreImg": [
+            "https://i.ibb.co/WtxBqv4/1696676380816.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/WtxBqv4/1696676380816.jpg"
+        ]
+    },
+    {
+        "name":"Marvel Thor 6inc Action figure rubber toys",
+        "price": 1000,
+        "category" : "marvel",
+         "subCategory": "avengers",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":4.5,
+        "image": "https://i.ibb.co/qWFTPwJ/1696676380914.jpg",
+        "moreImg": [
+            "https://i.ibb.co/qWFTPwJ/1696676380914.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/qWFTPwJ/1696676380914.jpg"
+        ]
+    },
+
+    {
+        "name":"Marvel Hulk 10inch Action figure plastic toys",
+        "price": 1500,
+        "category" : "marvel",
+         "subCategory": "avengers",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":5,
+        "image": "https://i.ibb.co/gD8Ymtx/3a0ec678335280f0c0d8135ca460c70e.jpg",
+        "moreImg": [
+            "https://i.ibb.co/gD8Ymtx/3a0ec678335280f0c0d8135ca460c70e.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/gD8Ymtx/3a0ec678335280f0c0d8135ca460c70e.jpg"
+        ]
+    },
+     {
+        "name":"Marvel Black Panther 12inch Action figure steel toys",
+        "price": 1700,
+        "category" : "marvel",
+        "subCategory": "null",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":5,
+        "image": "https://i.ibb.co/30yyCPs/Black-Panther-Black-Panther-Posing-Marvel-Outdoor-Graphic-11-W-x-11-H.jpg",
+        "moreImg": [
+            "https://i.ibb.co/30yyCPs/Black-Panther-Black-Panther-Posing-Marvel-Outdoor-Graphic-11-W-x-11-H.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/30yyCPs/Black-Panther-Black-Panther-Posing-Marvel-Outdoor-Graphic-11-W-x-11-H.jpg"
+        ]
+    },
+    {
+        "name":"warner bros Bat man 12inch Action figure steel toys",
+        "price": 1200,
+        "category" : "warner-bros",
+         "subCategory": "null",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":3,
+        "image": "https://i.ibb.co/4jQcCC7/383c9f8ac71e8163670a82e406ee1888.jpg",
+        "moreImg": [
+            "https://i.ibb.co/4jQcCC7/383c9f8ac71e8163670a82e406ee1888.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/4jQcCC7/383c9f8ac71e8163670a82e406ee1888.jpg"
+        ]
+    },
+
+    {
+        "name":"Marvel Wolverine 12inch Action figure steel toys",
+        "price": 2700,
+        "category" : "marvel",
+       "subCategory": "null",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":4,
+        "image": "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+        "moreImg": [
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg"
+        ]
+    },
+
+    {
+        "name":"Marvel Thanos 6inch Action figure metal body toys",
+        "price": 2200,
+        "category" : "marvel",
+        "subCategory": "null",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":3.5,
+        "image": "https://i.ibb.co/8Pw7r0P/Marvel-Milestones-Avengers-4-Armored-Thanos-Statue.jpg",
+        "moreImg": [
+            "https://i.ibb.co/8Pw7r0P/Marvel-Milestones-Avengers-4-Armored-Thanos-Statue.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/8Pw7r0P/Marvel-Milestones-Avengers-4-Armored-Thanos-Statue.jpg"
+        ]
+    },
+{
+        "name":"Marvel spiderman 9inch Action figure rubber body toys",
+        "price": 1050,
+        "category" : "marvel",
+        "subCategory":"spiderman",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":3.5,
+        "image": "https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg",
+        "moreImg": [
+            "https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg"
+        ]
+    },
+    {
+        "name":"star-wars spiderman 9inch Action figure rubber body toys",
+        "price": 1050,
+        "category" : "star-wars",
+        "sub-category": "null",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":3.5,
+        "image": "https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg",
+        "moreImg": [
+            "https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg"
+        ]
+    },
+    {
+        "name":"marvel  venom 10inch Action figure rubber body toys",
+        "price": 1190,
+        "category" : "marvel",
+        "subCategory": "spiderman",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "rating":3.5,
+        "image": "https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg",
+        "moreImg": [
+            "https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg",
+            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
+            "https://i.ibb.co/NZJzzWX/9a8e87923d4dec42b60856add5062bbd.jpg",
+            "https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg"
+        ]
+    }
+    
+]

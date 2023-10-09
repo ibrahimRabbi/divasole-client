@@ -49,7 +49,7 @@ export default function Modal({ obj, open, setIsOpen }) {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-[70%] transform overflow-hidden rounded-2xl  bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="w-[70%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                     <div className='flex justify-start gap-14'>
                                         <img width={400} src={image} alt="" />
                                         <div>
