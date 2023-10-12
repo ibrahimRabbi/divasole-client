@@ -5,25 +5,10 @@ import Swal from "sweetalert2";
 
 
 
-const Card = ({ obj}) => {
+const Card = ({ obj, handler }) => {
 
 
-    const deleteHandler = (id) => {  
-        fetch(`http://localhost:5000/cart/${id}`, { method: 'DELETE' })
-            .then((res) => res.json())
-            .then(res => {
-                if (res.deletedCount > 0) {
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'Delete Done',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    action()
-                }
-            })
-    }
+   
 
 
 
@@ -38,14 +23,14 @@ const Card = ({ obj}) => {
 
                 <div>
                     <h1 className="text-2xl text font-semibold">{obj?.name}</h1>
-                    <div className="flex items-center gap-10 mt-2 text-gray-500 font-semibold">
-                        <p>Size: 12inch</p>
-                        <p>Quantity: 2</p>
+                    <div className="flex items-center gap-10 text-zinc-900 text-sm mt-1 font-semibold">
+                        <p>Size: {obj?.size}-inch</p>
+                        <p>Quantity: {obj?.qnty}</p>
                     </div>
-                    <div className="flex items-center gap-11 mt-3">
-                        <p className="text-xl font-semibold mt-2">Price:{obj?.price}-TK</p>
-                        <button onClick={() => deleteHandler(obj?._id)}>
-                            <FaTrashAlt className="text-red-600 text-xl mt-2" />
+                    <div className="flex items-center gap-11 mt-5">
+                        <p className="text-xl font-semibold mt-2">Price : {obj?.price}-TK</p>
+                        <button onClick={() => handler(obj?._id)}>
+                            <FaTrashAlt className="text-red-600 text-xl mt-2"/>
                         </button>
                     </div>
                 </div>

@@ -8,14 +8,26 @@ export const getData = createApi({
         categoryData: build.query({
             query:(category)=>`/data/${category}`
         }),
+        allData: build.query({
+            query:()=>'/data'
+        }),
+        specificToy: build.query({
+            query: (email) =>`/data?email=${email}`
+        }),
+        popularToys: build.query({
+            query: (rating) =>`/data?rating=${rating}`
+        }),
         idData: build.query({
             query : (id)=> `/id/${id}`
         }),
         cartData: build.query({
-            query: (email) => `/cart`
+            query: (email) => `/cart?email=${email}`
         }),
+        user: build.query({
+            query:(email) => `/user?email=${email}`
+        })
             
     })
 })
 
-export const {useIdDataQuery,useCategoryDataQuery,useCartDataQuery}  = getData
+export const {useIdDataQuery,useCategoryDataQuery,useCartDataQuery,useUserQuery,useAllDataQuery,useSpecificToyQuery,usePopularToysQuery}  = getData

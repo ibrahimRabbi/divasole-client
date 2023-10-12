@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { Context } from "../Authentication/AuthContext";
 import SigninProvider from "./SigninProvider";
-import { Roller } from "react-spinners-css";
-import Title from "../UI/Title";
+import Loader from "../UI/Loader";
+ 
 
 
 
@@ -21,7 +21,7 @@ const SignUp = () => {
 
 
     const submit = (data) => {
-        console.log(data)
+        
         const { name, email, number, image, password, confirm } = data
         const formData = new FormData()
         formData.append('image', image[0])
@@ -79,7 +79,7 @@ const SignUp = () => {
     }
 
     if (load) {
-        return <Roller className="pt-48 block mx-auto" />
+        return <Loader/>
     }
 
 

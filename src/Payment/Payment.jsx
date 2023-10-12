@@ -3,13 +3,15 @@ import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import CheckoutForm from './CheckoutForm';
 import './payment.css'
+import { useLocation } from 'react-router-dom';
 
 const Payment = () => {
     const stripePromise = loadStripe('pk_test_51NFaHHHYxG7WJPCTk0y79QmctbWnn8Q2zwqMbAsbPFLk8dCWhGi4I1K8009zXtNnfn9lFdcC9vzudTOvo1s7JV3W00xwgxC3Ju');
-
+    
+    
     return (
         <Elements stripe={stripePromise}>
-            <CheckoutForm />
+            <CheckoutForm   />
         </Elements>
     );
 };

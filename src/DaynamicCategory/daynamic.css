@@ -2,15 +2,12 @@
 grid-template-columns:2fr 6fr ;
 
 }
-.bg{
-background-color:hsla(87,74%,85%,1);
-background-image:
-radial-gradient(at 8% 49%, hsla(85,76%,77%,1) 0px, transparent 50%),
-radial-gradient(at 2% 85%, hsla(203,65%,68%,1) 0px, transparent 50%),
-radial-gradient(at 42% 72%, hsla(64,92%,74%,1) 0px, transparent 50%),
-radial-gradient(at 26% 61%, hsla(84,83%,70%,1) 0px, transparent 50%),
-radial-gradient(at 84% 27%, hsla(349,80%,86%,1) 0px, transparent 50%),
-radial-gradient(at 72% 65%, hsla(339,66%,63%,1) 0px, transparent 50%),
-radial-gradient(at 42% 40%, hsla(291,76%,66%,1) 0px, transparent 50%);
- 
+
+.glass{
+background: rgba( 158, 146, 146, 0.45 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.5px );
+-webkit-backdrop-filter: blur( 2.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

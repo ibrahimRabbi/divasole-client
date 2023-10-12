@@ -13,7 +13,7 @@ AOS.init();
 
 const Banner = () => {
     return (
-        <header className='banner pt-20  py-10'>     
+        <header className='banner pt-24 pb-16  '>     
             <Swiper
                 spaceBetween={30}
                 effect={"fade"}

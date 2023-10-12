@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import './payment.css'
-
 import { useLocation, useNavigate } from 'react-router-dom';
-// import { Context } from '../Authentication/AuthContext';
+import { Context } from '../Authentication/AuthContext';
 import Swal from 'sweetalert2';
 
 
@@ -18,9 +17,9 @@ const CheckoutForm = () => {
     const [proccesing, setProcessing] = useState(false)
     const [clientSecret, setClientSecret] = useState("");
     const navigate = useNavigate()
-    // const { user } = useContext(Context)
+     const { user } = useContext(Context)
     const { state } = useLocation()
-
+ 
     
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -46,8 +45,8 @@ const CheckoutForm = () => {
                 payment_method: {
                     card,
                     billing_details: {
-                        name: 'rabbi bahi', //user?.displayName || 'unknown',
-                        email: 'abc@gmail.com' //user?.email || 'anonymouse',
+                        name: user?.displayName || 'unknown',
+                        email: user?.email || 'anonymouse',
                     },
                 },
             },
@@ -61,65 +60,53 @@ const CheckoutForm = () => {
             console.log('[paymentIntent]', paymentIntent);
         }
 
-        // if (paymentIntent?.status == 'succeeded') {
-        // const summery = {
-        //     transictionId: paymentIntent.id,
-        //     amount: price,
-        //     email: user?.email,
-        //     date: new Date(),
-        //     className: dataObj.className,
-        //     selecetClassId: dataObj._id,
-        //     classId: dataObj.classId,
-        //     image: dataObj.classImage
-        // }
-        //     fetch('http://localhost:5000/enrolled', {
-        //         method: 'POST',
-        //         headers: { 'content-type': 'application/json' },
-        //         body: JSON.stringify({ userEmail: user?.email })
-        //     })
-        //         .then(res => res.json())
-        //         .then(res => {
-        //             if (res.insertedId) {
-        //                 Swal.fire({
-        //                     title: 'payment successfull',
-        //                     text: "You won't be able to revert this!",
-        //                     icon: 'success',
-        //                     showCancelButton: true,
-        //                     confirmButtonColor: '#3085d6',
-        //                     cancelButtonColor: '#d33',
-        //                     confirmButtonText: 'go to Dashboard'
-        //                 }).then(res => {
-        //                     if (res.isConfirmed) {
-        //                         navigate('/dashboard/myclass')
-        //                     } else {
-        //                         navigate('/')
-        //                     }
-        //                 })
-        //             }
-        //         })
-        // }
+        if (paymentIntent?.status === 'succeeded') {
+        const summery = {
+            transictionId: paymentIntent.id,
+            amount: state,
+            email: user?.email,
+            date: new Date(),
+        }
+            fetch('http://localhost:5000/payment', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(summery)
+            })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.insertedId) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'payment Successfull',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
 
     };
 
 
 
     useEffect(() => {
-        // if (state.price > 0) {
+         if (state > 0) {
             fetch("http://localhost:5000/create-payment-intent", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ price: 1200 }),
+                body: JSON.stringify({ price: state }),
             })
                 .then((res) => res.json())
                 .then((data) => setClientSecret(data.clientSecret));
-       // }
+     }
     }, [ ]);
 
     return (
         <section className='mx-auto h-[80vh]'>
 
             <form className='w-1/2 mt-20 mx-auto' onSubmit={handleSubmit}>
-                <h1 className='text-lg font-semibold text-red-600'>pay: Tk</h1>
+                <h1 className='text-lg font-semibold text-red-600'>pay : {state}-Tk</h1>
                 <CardElement />
                 <button className='btn btn-sm w-[140px] hover:bg-amber-500 bg-amber-500' type="submit"
                     disabled={!stripe || proccesing || !clientSecret}>Pay</button>

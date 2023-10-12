@@ -4,8 +4,7 @@ import { Context } from '../Authentication/AuthContext';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import SigninProvider from './SigninProvider';
-import { Roller } from 'react-spinners-css';
-import Title from '../UI/Title';
+import Loader from '../UI/Loader';
 
 const Signin = () => {
 
@@ -61,17 +60,12 @@ const Signin = () => {
     }
 
     if (loading) {
-        return <Roller className="mt-48 block mx-auto" />
+        return  <Loader/>
     }
 
-    return (
-        
-           
-                
+    return (      
             
-        <div className="hero min-h-screen bg">
-            
-               
+        <div className="hero min-h-screen bg">       
              
                 <div className="hero-content gap-20">
                 <img width={500} src="https://i.ibb.co/yN0CJZ3/experimental-3d-morphis-bank-account-management-using-a-cell-phone.png" alt="" />  

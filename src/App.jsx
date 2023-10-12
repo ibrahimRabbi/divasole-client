@@ -10,6 +10,13 @@ import Cart from "./cart/Cart"
 import AuthContext from "./Authentication/AuthContext"
 import SignUp from "./Form/Signup"
 import Signin from "./Form/Signin"
+import PrivetRoute from "./privetRoute/PrivetRoute"
+import AddToys from "./Seller/AddToy"
+import Search from "./Search/Search"
+import AllToys from "./Seller/AllToys"
+import MyToys from "./Seller/MyToys"
+import UpdateToy from "./Seller/UpdateToy"
+ 
 
  
 
@@ -26,16 +33,38 @@ function App() {
         },
         {
           path: ':category',
-          element: <DaynamicCate />,
+          element: <DaynamicCate/>,
         },
         {
-          path: '/:category/:id',
+          path: '/category/:id',
           element:<SingleData/>
         },
         {
           path: '/cart',
-          element:<Cart/>
-        }
+          element: <PrivetRoute><Cart/></PrivetRoute>
+        },
+        {
+          path: '/addtoys',
+          element:<AddToys/>
+        },
+        {
+          path: '/alltoys',
+          element:<AllToys/>
+        },
+        {
+          path: '/mytoys',
+          element:<MyToys/>
+        },
+        {
+          path: '/update/:id',
+          element: <UpdateToy />,
+           
+        },
+        {
+          path: '/search',
+          element:<Search/>
+        },
+         
       ]
     },
     {
