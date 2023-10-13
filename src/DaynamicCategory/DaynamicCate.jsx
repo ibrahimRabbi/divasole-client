@@ -15,14 +15,17 @@ const DaynamicCate = () => {
     const [datas, setDatas] = useState([])
     const { category } = useParams()
     const { data = [], refetch, isLoading } = useCategoryDataQuery(category)
-
+const [loading,setLoader] = useState(false)
 
 
     const sortingHandler = (data) => {
-        console.log(data)
+       setLoader(true)
         fetch(`http://localhost:5000/data/${category}?sort=${data}`)
             .then(res => res.json())
-            .then(res => setDatas(res))
+            .then(res => {
+                setDatas(res)
+                setLoader(false)
+            } )
     }
 
 
@@ -30,8 +33,12 @@ const DaynamicCate = () => {
         setDatas(data)
     }, [data])
 
+    
+    if (isLoading || datas.length < 0) {
+        return <Loader />
+    }
 
-    if (isLoading) {
+    if (loading) {
         return <Loader />
     }
 
