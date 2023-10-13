@@ -3,8 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Swal from 'sweetalert2';
-import {useIdDataQuery } from '../redux/baseApi/baseApi';
-import { Roller } from 'react-spinners-css';
+import {useIdDataQuery,useCartDataQuery } from '../redux/baseApi/baseApi';
 import { Context } from '../Authentication/AuthContext';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
@@ -13,14 +12,16 @@ import Loader from '../UI/Loader';
 
 const SingleData = () => {
     const { id } = useParams()
-    const {data={},refetch,isLoading} =  useIdDataQuery(id)
+    const {data={},isLoading} =  useIdDataQuery(id)
     const images = [];
     const navigate = useNavigate()
     const { user } = useContext(Context)
     const availableSize = [5, 6, 7, 8, 10, 10.5, 12, 12.5, '15+']
     const [qnty,setQnty] = useState(1)
     const [size, setSize] = useState(7)
-    
+     const {refetch}= useCartDataQuery(user?.email)
+
+     
 
 
     data.moreImg?.forEach(v => {
@@ -71,7 +72,7 @@ const SingleData = () => {
         })
             .then(res => res.json())
             .then(res => {
-                if (res.insertedId) {
+                if (res.insertedId>0) {
                     refetch()
                     Swal.fire({
                         title: 'cart have been Added successfully',

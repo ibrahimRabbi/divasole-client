@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-// import Swal from 'sweetalert2';
-// import { Context } from '../Authentication/AuthContext';
+import { Context } from '../Authentication/AuthContext';
+import { useSpecificToyQuery } from '../redux/baseApi/baseApi';
+
 
 
 const UpdateToy = () => {
@@ -13,8 +14,10 @@ const UpdateToy = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const subcategory = ['null', 'avangers', 'spiderman']
     const category = ['marvel', 'warner-bros', 'star-wars']
- 
+    const { user } = useContext(Context)
+    const {  refetch } = useSpecificToyQuery(user?.email)
 
+     
     const submitHandler = (data) => {
         fetch(`http://localhost:5000/update/${id}`, {
             method: 'PUT',
@@ -23,8 +26,9 @@ const UpdateToy = () => {
         })
             .then(res => res.json())
             .then(res => {
-                if (res.modifiedCount>0) {
-navigate('/mytoys')
+                if (res.modifiedCount > 0) {
+                    refetch()
+                    navigate('/mytoys')
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
@@ -33,7 +37,7 @@ navigate('/mytoys')
                         timer: 1500
                     })
                 }
-        })
+            })
     }
 
 
@@ -51,7 +55,7 @@ navigate('/mytoys')
                 <div className="form-control w-full">
                     <label className="label">Title/Toy Name *</label>
                     <input type="text"
-                    defaultValue={state.name}    
+                        defaultValue={state.name}
                         className="border border-amber-500 rounded-2xl p-2" placeholder='Type Here'
                         {...register('name', { required: true })} />
                     {errors.title && <p className="text-red-500">title is requird</p>}
@@ -89,7 +93,7 @@ navigate('/mytoys')
                         </select>
                     </div>
                 </div>
-               
+
 
                 <div className="form-control w-full">
                     <label className="label">Description*</label>

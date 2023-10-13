@@ -8,5 +8,18 @@ radial-gradient(at 48% 91%, hsla(160,89%,63%,1) 0px, transparent 50%),
 radial-gradient(at 31% 49%, hsla(197,91%,74%,1) 0px, transparent 50%),
 radial-gradient(at 97% 74%, hsla(234,99%,70%,1) 0px, transparent 50%),
 radial-gradient(at 97% 13%, hsla(248,71%,60%,1) 0px, transparent 50%);
-clip-path: polygon(100% 0%, 71% 0%, 33% 0%, 0% 0%, 0% 25%, 0% 54%, 0% 94%, 24% 98%, 52% 93%, 68% 95%, 89% 97%, 100% 89%, 100% 45%, 100% 25%);
+/* clip-path: polygon(44% 0%, 44% 0%, 23% 0%, 0% 0%, 0% 25%, 0% 81%, 30% 92%, 26% 90%, 29% 91%, 53% 93%, 75% 91%, 100% 81%, 100% 47%, 100% 0%); */
 }
+
+.gallery{
+    
+    grid-template-columns: 2fr 4fr 2fr;
+     
+}
+
+.pp{
+    border-radius: 5%;
+    border: 2px solid rgb(240, 6, 84);
+}
+
+   

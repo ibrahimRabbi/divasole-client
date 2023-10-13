@@ -1,24 +1,94 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState, useContext } from 'react'
 // import SizeQuanty from '../Utility/SizeQuanty/SizeQuanty'
-// import Swal from 'sweetalert2'
-// import { Context } from '../Authentication/AuthContext'
+ import Swal from 'sweetalert2'
+ import { Context } from '../Authentication/AuthContext'
 // import useCart from '../coustomHooks/useCart'
 import { useNavigate, Navigate, Link } from 'react-router-dom'
- 
 
 export default function Modal({ obj, open, setIsOpen }) {
     const { _id, category, image, name, description, price } = obj
+    const availableSize = [5, 6, 7, 8, 10, 10.5, 12, 12.5, '15+']
+    const [qnty, setQnty] = useState(1)
+    const [size, setSize] = useState(7)
 
-    // const [qunty, setQunty] = useState(1);
-    // const [size, setSize] = useState('')
-    // const { user } = useContext(Context)
-    // const { refetch } = useCart()
-    // const navigate = useNavigate()
+    
+    const { user } = useContext(Context)
+     
+     const navigate = useNavigate()
 
     function closeModal() {
         setIsOpen(false)
     }
+
+    const incrimentHandler = () => {
+        setQnty(v => {
+            if (v >= 10) {
+                return v = 10
+            }
+            return v + 1
+        })
+    }
+
+    const dicrimentHandler = () => {
+        setQnty(v => {
+            if (v < 2) {
+                return v = 1
+            }
+            return v - 1
+        })
+    }
+
+
+    const sizeHandler = (size) => {
+        setSize(size)
+    }
+
+    const addToCartHandler = () => {
+        if (!user) {
+            return navigate('/signin')
+        } else {
+
+            const addData = {
+                userMail: user?.email,
+                productId: _id,
+            name,
+                price ,
+                size, qnty,
+                image
+            }
+            fetch(`http://localhost:5000/cart`, {
+                method: "POST",
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(addData)
+            })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.insertedId) {
+                        
+                        Swal.fire({
+                            title: 'cart have been Added successfully',
+                            icon: 'success',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'view Cart'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                navigate('/cart')
+                            }
+                        })
+                    }
+                })
+        }
+    }
+
+
+
+
+
+
+
 
 
     return (
@@ -53,21 +123,43 @@ export default function Modal({ obj, open, setIsOpen }) {
                                     <div className='flex justify-start gap-14'>
                                         <img width={400} src={image} alt="" />
                                         <div>
-                                            <Dialog.Title as="h3" className="text-2xl font-medium leading-6">
+                                            <Dialog.Title as="h3" className="text-xl font-medium leading-6">
                                                 {name}
                                             </Dialog.Title>
-                                            <div className="mt-2">
-                                                <p className="text-sm text-gray-500">{description}</p>
-                                            </div>
+                                           
                                             <Dialog.Description className='mt-6'>
-                                                <h1 className='text-2xl font-semibold'>{`price ${price}-TK`}</h1>
+                                                <div className='flex justify-between w-[95%] items-center'>
+                                                    <h1 className='text-2xl text-zinc-950 font-semibold mt-5'>{`price ${price}-TK`}</h1>
+                                                    <div>
+                                                        <p className='font-semibold'>Quantity:</p>
+                                                        <div className='flex justify-center items-center px-2 bg-slate-200 gap-5 rounded-md'>
+                                                            <button onClick={dicrimentHandler} className='p-2 text-lg font-bold'>-</button>
+                                                            <p className='px-1'>{qnty}</p>
+                                                            <button onClick={incrimentHandler} className='p-2 text-lg font-bold' >+</button>
+                                                        </div>
+                                                   </div>
+                                                     
+                                                </div>
+                                                <div className='mt-5'>
+                                                    <p className='font-semibold'>Available Sizes:</p>
+                                                    <div className='flex flex-wrap gap-4'>
+                                                        {availableSize.map(v => {
+                                                            return (
+                                                                <div key={Math.random()} onClick={() => sizeHandler(v)} className={`${size === v ? 'bg-purple-500 text-slate-50 font-normal' : ''} border border-zinc-700 cursor-pointer font-semibold text-zinc-700 text-xs p-2 rounded-lg`} >
+                                                                    {v} Inch
+                                                                </div>
+                                                            )
 
+                                                        })}
+                                                    </div>
+                                                </div>
+                                                 
                                             </Dialog.Description>
 
                                             <div className="absolute mt-5 bottom-6 space-x-4">
                                                 <button type="button" className=' uppercase bg-red-400 hover:bg-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700  border-0 font-semibold text-zinc-950' onClick={closeModal}>cancel</button>
-                                                <Link to={`/${category}/${_id}`} className='bg-gradient-to-l uppercase from-amber-500 to-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>View Detailes</Link>
-                                                <button className='bg-gradient-to-l uppercase from-amber-500 to-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>Add To Bag</button>
+                                                <Link to={`/category/${_id}`} className='bg-gradient-to-l uppercase from-amber-500 to-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>View Detailes</Link>
+                                                <button onClick={addToCartHandler} className='bg-gradient-to-l uppercase from-amber-500 to-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>Add To Cart</button>
                                             </div>
                                         </div>
                                     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 backDrp border text-base-content">
+        <footer className="footer p-10 backDrp text-base-content">
             <aside>
                 <img width={170} loading='lazy' src="https://i.ibb.co/B39k2dx/1696674199331-removebg-preview.png" alt="LOGO" />
             <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>

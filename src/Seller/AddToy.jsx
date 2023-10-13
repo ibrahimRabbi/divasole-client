@@ -14,51 +14,51 @@ const AddProduct = () => {
     const submitHandler = (data) => {
 
         setLoading(true)
-        const { price, category, subCategory, available, description, name, image,moreImg } = data
-console.log(moreImg)
-        // const formData = new FormData()
-        // formData.append('image', image[0])
+        const { price, category, subCategory, available, description, name, image} = data
+ 
+        const formData = new FormData()
+        formData.append('image', image[0])
 
-        const imgData = new FormData()
-        imgData.append('moreImg',moreImg[0],moreImg[1],moreImg[2],moreImg[3])
-console.log(imgData)
-        // fetch(`https://api.imgbb.com/1/upload?key=980c5aa9b32d7a954c2c27ea3bb7f131`, {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        //     .then(res => res.json())
-        //     .then(res => {
-        //         if (res.data?.url) {
-        //             const img = res.data.url
-        //             const obj = {
-        //                 userName: user.displayName,
-        //                 email: user.email,
-        //                 rating: 4,
-        //                 name, image: img,
-        //                 price, available, category, subCategory, description,
-        //                 moreImg: [img, img1, img2, img3, img4],
-        //             }
-        //             fetch('http://localhost:5000/data', {
-        //                 method: 'POST',
-        //                 headers: { 'content-type': 'application/json' },
-        //                 body: JSON.stringify(obj)
-        //             })
-        //                 .then(res => res.json())
-        //                 .then(res => {
-        //                     if (res.insertedId) {
-        //                         setLoading(false)
-        //                         reset()
-        //                         Swal.fire({
-        //                             position: 'center',
-        //                             icon: 'success',
-        //                             title: 'product add successfull',
-        //                             showConfirmButton: false,
-        //                             timer: 1500
-        //                         })
-        //                     }
-        //                 })
-        //         }
-        //     })
+        // const imgData = new FormData()
+        // imgData.append('moreImg',moreImg[0],moreImg[1],moreImg[2],moreImg[3])
+ 
+        fetch(`https://api.imgbb.com/1/upload?key=980c5aa9b32d7a954c2c27ea3bb7f131`, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(res => {
+                if (res.data?.url) {
+                    const img = res.data.url
+                    const obj = {
+                        userName: user.displayName,
+                        email: user.email,
+                        rating: 4,
+                        name, image: img,
+                        price, available, category, subCategory, description,
+                        moreImg: [img],
+                    }
+                    fetch('http://localhost:5000/data', {
+                        method: 'POST',
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify(obj)
+                    })
+                        .then(res => res.json())
+                        .then(res => {
+                            if (res.insertedId) {
+                                setLoading(false)
+                                reset()
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'success',
+                                    title: 'product add successfull',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        })
+                }
+            })
     }
 
     if (loading) {
@@ -116,7 +116,7 @@ console.log(imgData)
 
                     <div className="form-control w-full">
                         <label className="label">more Image *</label>
-                        <input type="file" multiple className="file-input file-input-bordered file-input-warning w-full" {...register('moreImg', { required: true })}
+                        <input type="file" multiple className="file-input file-input-bordered file-input-warning w-full" {...register('moreImg')}
                         />
                         {errors.moreImg && <p className="text-red-500">faild value is requird</p>}
                     </div>

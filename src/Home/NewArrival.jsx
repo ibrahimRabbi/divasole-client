@@ -10,7 +10,7 @@ const Arrival = () => {
 
 
     return (
-        <section className="pb-20 w-[90%] mx-auto">
+        <section className="py-20 w-[90%] mt-20 mx-auto">
              <Title title='new Arrival'/>
             <div className='mt-16'>
                 <Swiper

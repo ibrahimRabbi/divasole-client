@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useCartDataQuery } from '../redux/baseApi/baseApi';
 import Card from './CartCard';
 import Calculate from './calculate';
@@ -10,8 +10,12 @@ import Loader from '../UI/Loader';
 
 const Cart = () => {
     const { user } = useContext(Context)
+    
     const { data = [], refetch, isLoading } = useCartDataQuery(user?.email)
  
+    useEffect(() => {
+        refetch()
+    },[])
     
     const deleteHandler = (id) => {
         fetch(`http://localhost:5000/cart/${id}`, { method: 'DELETE' })
@@ -30,11 +34,14 @@ const Cart = () => {
             })
     }
 
-
+    if (!user) {
+        return <Loader />
+    }
 
     if (isLoading) {
         return  <Loader/>
     }
+    
     return (
         <section>
             <div className='w-[90%] pt-28 pb-10 mx-auto cart grid gap-10'>

@@ -16,8 +16,7 @@ const CateGory = () => {
     
 
     return (
-        <section  className='w-[90%] mx-auto mt-20'>
-            <Title title="Top Categories to choose from" />
+        <section  className='w-[90%] relative -top-28 z-20 mx-auto'>
             <div data-aos="fade-right" className='flex flex-wrap justify-center items-center gap-x-16'>{category.map(v => <CategoryCard key={Math.random()} data={v} />)}</div>
         </section>
     );

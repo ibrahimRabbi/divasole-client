@@ -11,6 +11,9 @@ export const getData = createApi({
         allData: build.query({
             query:()=>'/data'
         }),
+        cartData: build.query({
+            query: (email) => `/cart?email=${email}`
+        }),
         specificToy: build.query({
             query: (email) =>`/data?email=${email}`
         }),
@@ -20,9 +23,7 @@ export const getData = createApi({
         idData: build.query({
             query : (id)=> `/id/${id}`
         }),
-        cartData: build.query({
-            query: (email) => `/cart?email=${email}`
-        }),
+        
         user: build.query({
             query:(email) => `/user?email=${email}`
         })
