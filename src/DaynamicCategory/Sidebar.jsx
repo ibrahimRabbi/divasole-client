@@ -10,11 +10,7 @@ import ActiveLink from '../UI/ActiveLink';
 
 
 const Sidebar = ({ sortingHandler }) => {
-     
-   // const count = useSelector((state) => state.counter.value)
-    //const dispatch = useDispatch()
     const sorting = ['New Arrival', 'Rating', 'Low price', 'High price']
-    
     
     return (
         <div className='backDrp border border-t-0 border-b-0 p-5'>
@@ -32,11 +28,12 @@ const Sidebar = ({ sortingHandler }) => {
                         <details open>
                             <summary>choose your category</summary>
                             <ul>
+                                <li><ActiveLink to='/marvel'>Marvel</ActiveLink></li>
                                 <li><ActiveLink to='/avangers'>Avangers</ActiveLink></li>
                                 <li><ActiveLink to='/spiderman'>spiderman</ActiveLink></li>
                                 <li><ActiveLink to='/star-wars'>star-wars</ActiveLink></li>
                                 <li><ActiveLink to='/warner-bros'>warner-bros</ActiveLink></li>
-                                <li><ActiveLink to='/marvel'>Marvel</ActiveLink></li>
+                                <li><ActiveLink to='/transfarmer'>Transfarmer</ActiveLink></li>
                             </ul>
                         </details>
                     </li>

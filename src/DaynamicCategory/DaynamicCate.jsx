@@ -11,32 +11,35 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 const DaynamicCate = () => {
-    //const { sortingData } = useSelector((state) => console.log(state.sortingData))
-    const [datas, setDatas] = useState([])
     const { category } = useParams()
-    const { data = [], refetch, isLoading } = useCategoryDataQuery(category)
-const [loading,setLoader] = useState(false)
+    const [loading, setLoader] = useState(false)
+    const [data, setData] = useState([])
+
 
 
     const sortingHandler = (data) => {
-       setLoader(true)
-        fetch(`http://localhost:5000/data/${category}?sort=${data}`)
+        setLoader(true)
+        fetch(`https://toys-server-ebon.vercel.app/data/${category}?sort=${data}`)
             .then(res => res.json())
             .then(res => {
-                setDatas(res)
+                setData(res)
                 setLoader(false)
-            } )
+            })
     }
-
 
     useEffect(() => {
-        setDatas(data)
-    }, [data])
+        setLoader(true)
+        fetch(`https://toys-server-ebon.vercel.app/data/${category}`)
+            .then(res => res.json())
+            .then(res => {
+                setData(res)
+                setLoader(false)
+            })
+    }, [category])
 
-    
-    if (isLoading || datas.length < 0) {
-        return <Loader />
-    }
+
+
+
 
     if (loading) {
         return <Loader />
@@ -51,7 +54,7 @@ const [loading,setLoader] = useState(false)
                     <div className='mt-7'>
                         <Title title={category} />
                         <div className='grid grid-cols-3 gap-11 mt-12 mb-16'>
-                            {datas.map(v => <Card key={v._id} data={v} category={category} />)}
+                            {data.map(v => <Card key={v._id} data={v} category={category} />)}
                         </div>
                     </div>
                 </div>

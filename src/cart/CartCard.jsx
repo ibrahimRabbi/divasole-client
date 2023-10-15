@@ -7,11 +7,6 @@ import Swal from "sweetalert2";
 
 const Card = ({ obj, handler }) => {
 
-
-   
-
-
-
     return (
         <section>
             <div className="flex backDrp items-start gap-6 border p-4 rounded-lg shadow-md">

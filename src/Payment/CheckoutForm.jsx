@@ -17,10 +17,10 @@ const CheckoutForm = () => {
     const [proccesing, setProcessing] = useState(false)
     const [clientSecret, setClientSecret] = useState("");
     const navigate = useNavigate()
-     const { user } = useContext(Context)
+    const { user } = useContext(Context)
     const { state } = useLocation()
- 
-    
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         setProcessing(true)
@@ -61,13 +61,13 @@ const CheckoutForm = () => {
         }
 
         if (paymentIntent?.status === 'succeeded') {
-        const summery = {
-            transictionId: paymentIntent.id,
-            amount: state,
-            email: user?.email,
-            date: new Date(),
-        }
-            fetch('http://localhost:5000/payment', {
+            const summery = {
+                transictionId: paymentIntent.id,
+                amount: state,
+                email: user?.email,
+                date: new Date(),
+            }
+            fetch('https://toys-server-ebon.vercel.app/payment', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(summery)
@@ -91,16 +91,16 @@ const CheckoutForm = () => {
 
 
     useEffect(() => {
-         if (state > 0) {
-            fetch("http://localhost:5000/create-payment-intent", {
+        if (state > 0) {
+            fetch("https://toys-server-ebon.vercel.app/create-payment-intent", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ price: state }),
             })
                 .then((res) => res.json())
                 .then((data) => setClientSecret(data.clientSecret));
-     }
-    }, [ ]);
+        }
+    }, []);
 
     return (
         <section className='mx-auto h-[80vh]'>

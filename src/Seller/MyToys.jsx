@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom';
 
 
 const MyToys = () => {
-    const {user} = useContext(Context)
-    const { data = [],refetch,isLoading } = useSpecificToyQuery(user?.email)
-    
+    const { user } = useContext(Context)
+    const { data = [], refetch, isLoading } = useSpecificToyQuery(user?.email)
+
 
     const deleteHandler = (id) => {
         Swal.fire({
@@ -24,7 +24,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/data/${id}`, { method: 'DELETE' })
+                fetch(`https://toys-server-ebon.vercel.app/data/${id}`, { method: 'DELETE' })
                     .then((res) => res.json())
                     .then(res => {
                         if (res.deletedCount > 0) {
@@ -38,10 +38,10 @@ const MyToys = () => {
                             })
                         }
                     })
-                
+
             }
         })
-       
+
     }
 
 
@@ -78,7 +78,7 @@ const MyToys = () => {
                                         </td>
                                         <th>{v.name}</th>
                                         <td>{v.price}-TK</td>
-                                        <td><button onClick={()=>deleteHandler(v._id)} className=' p-3 ring-1 ring-red-500 bg-transparent rounded-full hover:bg-red-600 hover:text-white'><RxCross2 className='text-xl'/></button></td>
+                                        <td><button onClick={() => deleteHandler(v._id)} className=' p-3 ring-1 ring-red-500 bg-transparent rounded-full hover:bg-red-600 hover:text-white'><RxCross2 className='text-xl' /></button></td>
                                         <td>
                                             <Link to={`/update/${v._id}`} state={v} className="p-2 rounded-lg text-zinc-950 bg-amber-500">update</Link>
                                         </td>
@@ -91,7 +91,7 @@ const MyToys = () => {
                     </table>
                 </div>
             </div>
-        </section> 
+        </section>
     );
 };
 

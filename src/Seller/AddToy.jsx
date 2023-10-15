@@ -14,14 +14,14 @@ const AddProduct = () => {
     const submitHandler = (data) => {
 
         setLoading(true)
-        const { price, category, subCategory, available, description, name, image} = data
- 
+        const { price, category, subCategory, available, description, name, image } = data
+
         const formData = new FormData()
         formData.append('image', image[0])
 
         // const imgData = new FormData()
         // imgData.append('moreImg',moreImg[0],moreImg[1],moreImg[2],moreImg[3])
- 
+
         fetch(`https://api.imgbb.com/1/upload?key=980c5aa9b32d7a954c2c27ea3bb7f131`, {
             method: 'POST',
             body: formData
@@ -38,7 +38,7 @@ const AddProduct = () => {
                         price, available, category, subCategory, description,
                         moreImg: [img],
                     }
-                    fetch('http://localhost:5000/data', {
+                    fetch('https://toys-server-ebon.vercel.app/data', {
                         method: 'POST',
                         headers: { 'content-type': 'application/json' },
                         body: JSON.stringify(obj)
@@ -62,7 +62,7 @@ const AddProduct = () => {
     }
 
     if (loading) {
-        return <Loader/>
+        return <Loader />
     }
     return (
         <section className='py-28'>
@@ -109,7 +109,7 @@ const AddProduct = () => {
                         <label className="label">how many toy want to add*</label>
                         <input type="number"
                             className="border border-amber-500 rounded-2xl p-2" placeholder='Type Here'
-                            {...register('available', { required: true,min:20 })} />
+                            {...register('available', { required: true, min: 20 })} />
                         {errors.available?.type === 'required' && <p className="text-red-500">stock is requird</p>}
                         {errors.available?.type === 'min' && <p className="text-red-500">stock add minimum 20 pices</p>}
                     </div>
@@ -121,7 +121,7 @@ const AddProduct = () => {
                         {errors.moreImg && <p className="text-red-500">faild value is requird</p>}
                     </div>
                 </div>
-                
+
                 <div className="form-control w-full">
                     <label className="label">Description*</label>
                     <textarea type="text"

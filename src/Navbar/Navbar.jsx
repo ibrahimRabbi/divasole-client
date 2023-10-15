@@ -10,7 +10,7 @@ import ActiveLink from '../UI/ActiveLink';
 const Navbar = () => {
     const { user, signout } = useContext(Context)
     const { data: users = {}, isLoading } = useUserQuery(user?.email)
-    const { data: cartData = [],refetch } = useCartDataQuery(user?.email)
+    const { data: cartData = [], refetch } = useCartDataQuery(user?.email)
     const navigate = useNavigate()
     let quantitiy = 0
 
@@ -20,19 +20,19 @@ const Navbar = () => {
 
     const searchHandler = (e) => {
         e.preventDefault()
-        const name = e.target.name.value 
-        fetch(`http://localhost:5000/data?search=${name}`)
+        const name = e.target.name.value
+        fetch(`https://toys-server-ebon.vercel.app/data?search=${name}`)
             .then(res => res.json())
             .then(res => {
-                navigate('/search', { state:res })
-        })
-         
-       
+                navigate('/search', { state: res })
+            })
+
+
     }
 
     useEffect(() => {
-    refetch()
-})
+        refetch()
+    })
 
     if (isLoading) {
         return ''
@@ -55,14 +55,14 @@ const Navbar = () => {
                         <li><ActiveLink to='/addtoys' >ADD TOYS</ActiveLink></li>
                     </ul> : <div className='w-[32%]'>
                         <div className="form-control">
-                            
-                                    <form className="input-group " onSubmit={searchHandler}>
-                                        <input name='name' type="text" placeholder="Search by product name" className="input input-bordered w-full" />
-                                        <button type='submit' className="btn bg-gradient-to-t from-red-500 to-amber-500 hover:bg-red-700 btn-square">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                                        </button>
-                               </form>
-                            
+
+                            <form className="input-group " onSubmit={searchHandler}>
+                                <input name='name' type="text" placeholder="Search by product name" className="input input-bordered w-full" />
+                                <button type='submit' className="btn bg-gradient-to-t from-red-500 to-amber-500 hover:bg-red-700 btn-square">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                </button>
+                            </form>
+
                         </div>
                     </div>
                 }

@@ -1,8 +1,8 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState, useContext } from 'react'
 // import SizeQuanty from '../Utility/SizeQuanty/SizeQuanty'
- import Swal from 'sweetalert2'
- import { Context } from '../Authentication/AuthContext'
+import Swal from 'sweetalert2'
+import { Context } from '../Authentication/AuthContext'
 // import useCart from '../coustomHooks/useCart'
 import { useNavigate, Navigate, Link } from 'react-router-dom'
 
@@ -12,10 +12,10 @@ export default function Modal({ obj, open, setIsOpen }) {
     const [qnty, setQnty] = useState(1)
     const [size, setSize] = useState(7)
 
-    
+
     const { user } = useContext(Context)
-     
-     const navigate = useNavigate()
+
+    const navigate = useNavigate()
 
     function closeModal() {
         setIsOpen(false)
@@ -52,12 +52,12 @@ export default function Modal({ obj, open, setIsOpen }) {
             const addData = {
                 userMail: user?.email,
                 productId: _id,
-            name,
-                price ,
+                name,
+                price,
                 size, qnty,
                 image
             }
-            fetch(`http://localhost:5000/cart`, {
+            fetch(`https://toys-server-ebon.vercel.app/cart`, {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(addData)
@@ -65,7 +65,7 @@ export default function Modal({ obj, open, setIsOpen }) {
                 .then(res => res.json())
                 .then(res => {
                     if (res.insertedId) {
-                        
+
                         Swal.fire({
                             title: 'cart have been Added successfully',
                             icon: 'success',
@@ -105,7 +105,7 @@ export default function Modal({ obj, open, setIsOpen }) {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <div className="fixed inset-0 bg-opacity-25" />   
+                        <div className="fixed inset-0 bg-opacity-25" />
                     </Transition.Child>
 
                     <div className="fixed inset-0 text-zinc-950 overflow-y-auto">
@@ -121,14 +121,14 @@ export default function Modal({ obj, open, setIsOpen }) {
                             >
                                 <Dialog.Panel className="w-[70%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                     <div className='flex justify-start gap-14'>
-                                        <img width={400} src={image} alt="" />
+                                        <img className='' width={400} src={image} alt="" />
                                         <div>
                                             <Dialog.Title as="h3" className="text-xl font-medium leading-6">
                                                 {name}
                                             </Dialog.Title>
-                                           
+
                                             <Dialog.Description className='mt-6'>
-                                                <div className='flex justify-between w-[95%] items-center'>
+                                                <div className='flex mt-10 justify-between w-[95%] items-center'>
                                                     <h1 className='text-2xl text-zinc-950 font-semibold mt-5'>{`price ${price}-TK`}</h1>
                                                     <div>
                                                         <p className='font-semibold'>Quantity:</p>
@@ -137,10 +137,10 @@ export default function Modal({ obj, open, setIsOpen }) {
                                                             <p className='px-1'>{qnty}</p>
                                                             <button onClick={incrimentHandler} className='p-2 text-lg font-bold' >+</button>
                                                         </div>
-                                                   </div>
-                                                     
+                                                    </div>
+
                                                 </div>
-                                                <div className='mt-5'>
+                                                <div className='mt-10'>
                                                     <p className='font-semibold'>Available Sizes:</p>
                                                     <div className='flex flex-wrap gap-4'>
                                                         {availableSize.map(v => {
@@ -153,7 +153,7 @@ export default function Modal({ obj, open, setIsOpen }) {
                                                         })}
                                                     </div>
                                                 </div>
-                                                 
+
                                             </Dialog.Description>
 
                                             <div className="absolute mt-5 bottom-6 space-x-4">

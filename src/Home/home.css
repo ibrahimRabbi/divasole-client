@@ -1,14 +1,13 @@
 .banner{
-    background-color:#ffc599;
+background-color:hsla(318,30%,95%,1);
 background-image:
-radial-gradient(at 42% 34%, hsla(350,91%,69%,1) 0px, transparent 50%),
-radial-gradient(at 78% 54%, hsla(22,74%,60%,1) 0px, transparent 50%),
-radial-gradient(at 33% 4%, hsla(122,65%,76%,1) 0px, transparent 50%),
-radial-gradient(at 48% 91%, hsla(160,89%,63%,1) 0px, transparent 50%),
-radial-gradient(at 31% 49%, hsla(197,91%,74%,1) 0px, transparent 50%),
-radial-gradient(at 97% 74%, hsla(234,99%,70%,1) 0px, transparent 50%),
-radial-gradient(at 97% 13%, hsla(248,71%,60%,1) 0px, transparent 50%);
-/* clip-path: polygon(44% 0%, 44% 0%, 23% 0%, 0% 0%, 0% 25%, 0% 81%, 30% 92%, 26% 90%, 29% 91%, 53% 93%, 75% 91%, 100% 81%, 100% 47%, 100% 0%); */
+radial-gradient(at 22% 51%, rgb(243, 113, 195) 0px, transparent 50%),
+radial-gradient(at 77% 49%, hsla(66,87%,68%,1) 0px, transparent 50%),
+radial-gradient(at 96% 85%, rgba(240, 242, 245, 0) 0px, transparent 50%),
+radial-gradient(at 29% 39%, rgb(237, 245, 245) 0px, transparent 50%),
+radial-gradient(at 26% 79%, rgb(233, 189, 236) 0px, transparent 50%),
+radial-gradient(at 67% 99%, rgb(231, 175, 235) 0px, transparent 50%);
+ 
 }
 
 .gallery{

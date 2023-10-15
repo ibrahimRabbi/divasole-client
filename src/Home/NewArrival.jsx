@@ -23,33 +23,25 @@ const Arrival = () => {
                     className="mySwiper"
                 >
                     <SwiperSlide>
-                      
-                        <img src="https://i.ibb.co/30yyCPs/Black-Panther-Black-Panther-Posing-Marvel-Outdoor-Graphic-11-W-x-11-H.jpg" />
-                         
+                        <img src="https://i.ibb.co/mSv6hCW/1696676380836.jpg" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img   src="https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg" />
+                        <img src="https://i.ibb.co/89PQmHx/1696676380931-1.jpg" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="https://i.ibb.co/qWFTPwJ/1696676380914.jpg" />
+                        <img src="https://i.ibb.co/bbmZTnc/1696676380904.jpg" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="https://i.ibb.co/9Nz9cnp/fc962b580c5c74a247a09df8911f7b23.jpg" />
+                        <img src="https://i.ibb.co/jTX8VsL/1696676380872.jpg" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="https://i.ibb.co/Vmr8yNZ/FB-IMG-1690052128298.jpg" />
+                        <img src=" https://i.ibb.co/V2FqNbm/1696676380939.jpg" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="https://i.ibb.co/CHF4k96/FB-IMG-1690086785913.jpg" />
+                        <img src="https://i.ibb.co/jMcVfMq/1696676380914.jpg" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="https://i.ibb.co/NtD8KmG/FB-IMG-1690053038306.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/jTyRYtv/FB-IMG-1690096862344.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/mJjgnGV/FB-IMG-1690086778831.jpg" />
+                        <img src="https://i.ibb.co/ry9Y9b0/1696676380894.jpg" />
                     </SwiperSlide>
                 </Swiper>
             </div>

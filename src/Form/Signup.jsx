@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import { Context } from "../Authentication/AuthContext";
 import SigninProvider from "./SigninProvider";
 import Loader from "../UI/Loader";
- 
+
 
 
 
@@ -21,7 +21,7 @@ const SignUp = () => {
 
 
     const submit = (data) => {
-        
+
         const { name, email, number, image, password, confirm } = data
         const formData = new FormData()
         formData.append('image', image[0])
@@ -45,10 +45,10 @@ const SignUp = () => {
                             .then(res => {
                                 setLoad(true)
                                 profile(res.user, name, img, number)
-                                fetch('http://localhost:5000/user', {
+                                fetch('https://toys-server-ebon.vercel.app/user', {
                                     method: "POST",
                                     headers: { 'content-type': 'application/json' },
-                                    body: JSON.stringify({...userObj,img})
+                                    body: JSON.stringify({ ...userObj, img })
                                 })
                                     .then(res => res.json())
                                     .then(res => {
@@ -79,7 +79,7 @@ const SignUp = () => {
     }
 
     if (load) {
-        return <Loader/>
+        return <Loader />
     }
 
 

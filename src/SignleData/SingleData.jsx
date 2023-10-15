@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Swal from 'sweetalert2';
-import {useIdDataQuery,useCartDataQuery } from '../redux/baseApi/baseApi';
+import { useIdDataQuery, useCartDataQuery } from '../redux/baseApi/baseApi';
 import { Context } from '../Authentication/AuthContext';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
@@ -12,16 +12,16 @@ import Loader from '../UI/Loader';
 
 const SingleData = () => {
     const { id } = useParams()
-    const {data={},isLoading} =  useIdDataQuery(id)
+    const { data = {}, isLoading } = useIdDataQuery(id)
     const images = [];
     const navigate = useNavigate()
     const { user } = useContext(Context)
     const availableSize = [5, 6, 7, 8, 10, 10.5, 12, 12.5, '15+']
-    const [qnty,setQnty] = useState(1)
+    const [qnty, setQnty] = useState(1)
     const [size, setSize] = useState(7)
-     const {refetch}= useCartDataQuery(user?.email)
+    const { refetch } = useCartDataQuery(user?.email)
 
-     
+
 
 
     data.moreImg?.forEach(v => {
@@ -31,7 +31,7 @@ const SingleData = () => {
     const incrimentHandler = () => {
         setQnty(v => {
             if (v >= 10) {
-                return v=10
+                return v = 10
             }
             return v + 1
         })
@@ -50,49 +50,49 @@ const SingleData = () => {
         setSize(size)
     }
 
-    
+
 
     const addToCartHandler = () => {
         if (!user) {
             return navigate('/signin')
         } else {
-            
-        const addData = {
-            userMail: user?.email,
-            productId: id,
-            name: data.name,
-            price: data.price,
-            size, qnty,
-            image: data.image
-        }
-        fetch(`http://localhost:5000/cart`, {
-            method: "POST",
-            headers: { 'content-type': 'application/json' },
-            body : JSON.stringify(addData)
-        })
-            .then(res => res.json())
-            .then(res => {
-                if (res.insertedId>0) {
-                    refetch()
-                    Swal.fire({
-                        title: 'cart have been Added successfully',
-                        icon: 'success',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'view Cart'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            navigate('/cart')
-                        }
-                    })
-                }
+
+            const addData = {
+                userMail: user?.email,
+                productId: id,
+                name: data.name,
+                price: data.price,
+                size, qnty,
+                image: data.image
+            }
+            fetch(`https://toys-server-ebon.vercel.app/cart`, {
+                method: "POST",
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(addData)
             })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.insertedId) {
+                        refetch()
+                        Swal.fire({
+                            title: 'cart have been Added successfully',
+                            icon: 'success',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'view Cart'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                navigate('/cart')
+                            }
+                        })
+                    }
+                })
         }
     }
 
     if (isLoading) {
-        return  <Loader/>
+        return <Loader />
     }
 
 
@@ -131,7 +131,7 @@ const SingleData = () => {
                         <div className='flex flex-wrap gap-4'>
                             {availableSize.map(v => {
                                 return (
-                                    <div key={Math.random()} onClick={() => sizeHandler(v)} className={`${size === v?'bg-purple-500 text-slate-50 font-normal':''} border cursor-pointer font-semibold text-zinc-700 text-xs border-white p-2 rounded-lg`} >
+                                    <div key={Math.random()} onClick={() => sizeHandler(v)} className={`${size === v ? 'bg-purple-500 text-slate-50 font-normal' : ''} border cursor-pointer font-semibold text-zinc-700 text-xs border-white p-2 rounded-lg`} >
                                         {v} Inch
                                     </div>
                                 )
@@ -160,7 +160,7 @@ const SingleData = () => {
                     </div>
                 </div>
             </div>
-            
+
         </section>
     );
 };

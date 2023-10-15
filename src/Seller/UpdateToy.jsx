@@ -15,11 +15,11 @@ const UpdateToy = () => {
     const subcategory = ['null', 'avangers', 'spiderman']
     const category = ['marvel', 'warner-bros', 'star-wars']
     const { user } = useContext(Context)
-    const {  refetch } = useSpecificToyQuery(user?.email)
+    const { refetch } = useSpecificToyQuery(user?.email)
 
-     
+
     const submitHandler = (data) => {
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://toys-server-ebon.vercel.app/update/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
