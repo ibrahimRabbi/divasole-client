@@ -7,7 +7,7 @@ import Loader from '../UI/Loader';
 const AddProduct = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const subcategory = ['null', 'avangers', 'spiderman']
-    const category = ['marvel', 'warner-bros', 'star-wars']
+    const category = ['marvel', 'warner-bros', 'star-wars', 'transfarmer']
     const [loading, setLoading] = useState(false)
     const { user } = useContext(Context)
 

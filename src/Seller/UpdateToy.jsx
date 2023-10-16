@@ -13,7 +13,7 @@ const UpdateToy = () => {
     const navigate = useNavigate()
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const subcategory = ['null', 'avangers', 'spiderman']
-    const category = ['marvel', 'warner-bros', 'star-wars']
+    const category = ['marvel', 'warner-bros', 'star-wars', 'transfarmer']
     const { user } = useContext(Context)
     const { refetch } = useSpecificToyQuery(user?.email)
 

@@ -153,7 +153,7 @@ const SingleData = () => {
 
                     <div className="divider"></div>
                     <div className="flex gap-8 lg:mt-12 mt-5 items-center">
-                        <button onClick={addToCartHandler} className="p-2 rounded-lg text-white font-semibold bg-red-600 w-[45%]">Add To Cart</button>
+                        <button onClick={addToCartHandler} className={`p-2 rounded-lg text-white font-semibold bg-red-600 w-[45%]`}>Add To Cart</button>
                         <button className="p-2 rounded-lg font-semibold bg-amber-400 text-slate-900 w-[45%]">
                             Buy Now
                         </button>

@@ -9,7 +9,7 @@ import '@smastrom/react-rating/style.css'
 
 
 const Card = ({ data, category }) => {
-    const { image, name, price, rating, _id } = data
+    const { image, name, price, rating, _id,available } = data
     let [isOpen, setIsOpen] = useState(false)
 
     const openModal = () => {
@@ -23,6 +23,9 @@ const Card = ({ data, category }) => {
                 <Link to={`/category/${_id}`}>
                     <img className='hover:scale-110 duration-100' src={image} />
                 </Link>
+                {
+                    parseInt(available) > 0 ? '' : <div className="badge absolute top-3 right-2 text-xs text-white bg-red-600">sold out</div>
+                }
            </figure>
 
             <div className="card-body">

@@ -4,10 +4,8 @@ import Card from './Card';
 import Title from '../UI/Title';
 import './daynamic.css';
 import Sidebar from './sidebar';
-import { useCategoryDataQuery } from '../redux/baseApi/baseApi';
-
 import Loader from '../UI/Loader';
-import { useDispatch, useSelector } from 'react-redux';
+
 
 
 const DaynamicCate = () => {
