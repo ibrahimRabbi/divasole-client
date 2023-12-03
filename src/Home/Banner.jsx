@@ -13,62 +13,76 @@ AOS.init();
 
 const Banner = () => {
     return (
-        <header className='banner pt-11  '>     
+        <header className='banner font-extrabold'>  
+            
             <Swiper
                 spaceBetween={30}
                 effect={"fade"}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
                 navigation={true}
                 pagination={{ clickable: true }}
-                modules={[Autoplay,  Navigation, Pagination]}
+                modules={[Autoplay, Navigation, Pagination]}
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div className='w-[90%] pt-6 mx-auto flex justify-evenly  items-center'>
-                        <div data-aos="fade-right" className='w-[50%]'>
-                            <h1 className='text-[40px] text-teal-700 text-start font-semibold'>Get your best choice with toys park. becouse we provide us a quality full products</h1>
-                            <p className='text-base mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt impedit quidem eaque velit inventore nisi ea quibusdam, fugiat id distinctio. Voluptatem blanditiis cumque quasi eius dolor cum, libero impedit  </p>
+                    <div className='bg-[#FFFFFF] relative border'>
+                        <img className='absolute z-30 -right-10 -top-5' width={140} src="../../public/assest/chita.png" alt=""/>
+                        <div className='flex justify-center items-center w-[95%] mx-auto relative'>
+                            <img width={600} src="../../public/assest/banner2.jpg" />
+                                <div>
+                                    <h1 className='text-6xl'>Explore all the toys what you imagine</h1>
+                                <p className='text-lg mt-3'>get up to 30% off on the first order</p>
+                                <button className='bg-teal-500 text-sm text-white p-2 rounded-lg mt-3 hover:bg-teal-600 hover:text-lg duration-100 '>Visit now</button>
+                                </div> 
                         </div>
-                        <img data-aos="fade-left" loading='lazy' width={350} src="https://i.ibb.co/b2r2r55/1696653667582.png" alt="" />
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <div className='w-[90%] mx-auto flex justify-evenly  items-center'>
-                        <div data-aos="fade-right" className='w-[50%]'>
-                            <h1 className='text-4xl text-teal-700 text-start font-semibold tracking-normal leading-normal'>Thousend of variant toys available in the toys park</h1>
-                            <p className='text-base mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt impedit quidem eaque velit inventore nisi ea quibusdam, fugiat id distinctio. Voluptatem blanditiis cumque quasi eius dolor cum, libero impedit</p>
+                    <div className='bg-[#fcf2ec]'>
+                        <img className='absolute z-30 -right-10 -top-5' width={140} src="../../public/assest/chita.png" alt="" />
+                        <div className='flex justify-center items-center w-[95%] mx-auto relative'>
+                            <img src="../../public/assest/banner1.png" />
+                            <div className='flex justify-center items-center relative -left-28'>
+                                <img width={230} src="../../public/assest/offer.png" alt="" />
+                                <div>
+                                    <h1 className='text-6xl'><span className=' text-red-600'>70%</span> Flat Discount is going on</h1>
+                                    <p className='text-lg mt-3'>Limited offer, so why late..!! quick buy now</p>
+                                    <button className='bg-teal-500 text-sm text-white p-2 rounded-lg mt-3 hover:bg-teal-600 hover:text-lg duration-100 '>Buy now</button>
+                                </div>
+                            </div>
                         </div>
-                        <img data-aos="fade-left" loading='lazy' width={380} src="https://i.ibb.co/BCnX2rw/1696653667574.png" alt="" />
                     </div>
+                   
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <div className='w-[90%] mx-auto pt-11 flex justify-evenly  items-center'>
-                        <div data-aos="fade-right" className='w-[50%]'>
-                            <h1 className='text-4xl text-pink-700 text-start font-semibold tracking-normal leading-normal'>60% discount has running  on the transfermar toys</h1>
-                            <p className='text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt impedit quidem eaque velit inventore nisi ea quibusdam, fugiat id distinctio. Voluptatem blanditiis cumque quasi eius dolor cum, libero impedit  </p>
+                    <div className='bg-[#fcf2ec]'>
+                        <img className='absolute z-30 -right-10 -top-5' width={140} src="../../public/assest/chita.png" alt="" />
+                        <div className='flex justify-center items-center w-[95%] mx-auto relative'>
+                            <img src="../../public/assest/banner3.png" width={470} />   
+                                <div>
+                                    <h1 className='text-6xl'>Find your best choice with us within kiddo Park.</h1>
+                                <p className='text-lg mt-2'>becouse we provide a qualitifull Kids accessories.....</p>
+                                <button className='bg-teal-500 text-sm text-white p-2 rounded-lg mt-3 hover:bg-teal-600 hover:text-lg duration-100 '>Visit now</button>
+                                </div>
+                          
                         </div>
-                        <img data-aos="fade-left" loading='lazy' width={260} src="https://i.ibb.co/N7xLhCQ/1696653667588.png" alt="" />
                     </div>
                 </SwiperSlide>
 
-                <SwiperSlide>
-                    <div className='w-[90%] mx-auto pt-11 flex justify-evenly  items-center'>
-                        <div data-aos="fade-right" className='w-[50%]'>
-                            <h1 className='text-4xl text-purple-700 text-start font-semibold tracking-normal leading-normal'>so why you getting late!
-                            lets Enjoy and Explore toys park world</h1>
-                            <p className='text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt impedit quidem eaque velit inventore nisi ea quibusdam, fugiat id distinctio. Voluptatem blanditiis cumque quasi eius dolor cum, libero impedit  </p>
-                        </div>
-                        <img data-aos="fade-left" loading='lazy' width={350} src="https://i.ibb.co/b62tbqv/1696653667598.png" alt="" />
-                    </div>
-                </SwiperSlide>
+                
+
+            </Swiper>
 
 
-</Swiper>
-            
         </header>
     );
 };
 
 export default Banner;
+
+
+
+
+
