@@ -1,15 +1,4 @@
-.banner{
-background-color:hsla(318,30%,95%,1);
-background-image:
-radial-gradient(at 22% 51%, rgb(243, 113, 195) 0px, transparent 50%),
-radial-gradient(at 77% 49%, hsla(66,87%,68%,1) 0px, transparent 50%),
-radial-gradient(at 96% 85%, rgba(240, 242, 245, 0) 0px, transparent 50%),
-radial-gradient(at 29% 39%, rgb(237, 245, 245) 0px, transparent 50%),
-radial-gradient(at 26% 79%, rgb(233, 189, 236) 0px, transparent 50%),
-radial-gradient(at 67% 99%, rgb(231, 175, 235) 0px, transparent 50%);
  
-}
-
 .gallery{
     
     grid-template-columns: 2fr 4fr 2fr;
