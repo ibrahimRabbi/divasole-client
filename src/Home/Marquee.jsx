@@ -5,7 +5,6 @@ const Marque = () => {
     return (
         <section className='w-[90%] mx-auto mb-16'>
             <div className='w-1/2 text-center mx-auto'>
-                <p>get your favourite Brand</p>
                 <Title title='Available Brand'/>
             </div>
             <Marquee>

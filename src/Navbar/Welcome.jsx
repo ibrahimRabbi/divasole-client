@@ -4,7 +4,7 @@ import { FaHeartbeat } from "react-icons/fa";
 import './navbar.css'
 const Welcome = () => {
     return (
-        <div className='p-1.5 bg-slate-100 text-[#4e311f] welcome font-semibold text-sm'> 
+        <div className='p-2 bg-slate-100 text-[#4e311f] welcome font-semibold text-sm'> 
             <div className='w-[95%] mx-auto flex justify-between items-center'>
                 <div className='flex items-center gap-1 font-semibold'>
                     <HiHashtag className="text-lg" />

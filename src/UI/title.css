@@ -1,7 +1,6 @@
 .title{
-    background:linear-gradient(to right, #3e5326,#34461f);
+    color: #613d26;
     text-transform: uppercase;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
+    font-weight: bolder;
+   font-family: 'Lexend', sans-serif;
 }

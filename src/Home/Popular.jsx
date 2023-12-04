@@ -8,7 +8,10 @@ const Popular = () => {
      
     return (
         <section className='w-[90%] mt-36 mx-auto'>
-            <Title title='Popular and Demandable Toys' />
+            <div className='w-[60%] text-center mx-auto'>
+                <Title title='Popular Toys'/>
+            </div>
+            
             <div className='grid grid-cols-4 gap-10 mt-16'>
                 {
                     data.map(v=><Card key={v._id} data={v} category={v._category}/>)
