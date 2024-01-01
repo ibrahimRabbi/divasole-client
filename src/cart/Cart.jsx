@@ -44,7 +44,7 @@ const Cart = () => {
 
     return (
         <section>
-            <div className='w-[90%] pt-28 pb-10 mx-auto cart grid gap-10'>
+            <div className='w-[90%] mt-12 pb-10 mx-auto cart grid gap-10'>
                 <div className='space-y-5'>
                     {
                         data.map(v => <Card handler={deleteHandler} obj={v} key={v._id} />)

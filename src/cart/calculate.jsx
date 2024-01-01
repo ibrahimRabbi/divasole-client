@@ -12,7 +12,7 @@ const Calculate = ({data}) => {
     let discount = 10;
     let subTotal = 0
 
-    
+     
 
     data.forEach(v => {
         quantitiy = quantitiy + v.qnty

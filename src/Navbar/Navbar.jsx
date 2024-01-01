@@ -74,7 +74,7 @@ const Navbar = () => {
                                             <img loading='lazy' src={user?.photoURL} />
                                         </div>
                                     </label>
-                                    <ul tabIndex={0} className="menu menu-sm dropdown-content font-semibold text-zinc-950 mt-3 z-[1] p-2 shadow  backDrp22 rounded-box w-52">
+                                    <ul tabIndex={0} className="menu z-50 menu-sm dropdown-content font-semibold text-zinc-950 mt-3   p-2 shadow  backDrp22 rounded-box w-52">
                                         {users?.role === 'seller' ? "" : <div>
                                             <li><Link>Dashboard</Link></li>
 

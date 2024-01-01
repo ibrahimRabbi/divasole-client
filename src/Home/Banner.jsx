@@ -25,7 +25,7 @@ const Banner = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div className='bg-[#FFFFFF] relative border'>
+                    <div className='bg-[#FFFFFF] relative'>
                         <img className='absolute z-30 -right-10 -top-5' width={140} src="../../public/assest/chita.png" alt=""/>
                         <div className='flex justify-center items-center w-[95%] mx-auto relative'>
                             <img width={600} src="../../public/assest/banner2.jpg" />

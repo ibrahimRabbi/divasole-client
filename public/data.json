@@ -1,17 +1,18 @@
 [
     {
-        "name":"Marvel Iron Man 1.5ft Action figure steel toys",
-        "price": 1650,
-        "category" : "marvel",
-        "subCategory": "avengers",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veniam nobis assumenda! Nobis necessitatibus error, debitis ipsa quae hic. Totam expedita a aperiam accusamus temporibus velit corporis reprehenderit voluptatem culpa!",
+        "name":"Zappi Co Children's Soft Cuddly Plush Toy Animal unicorn",
+        "price": 700,
+        "category" : "warner-bros",
+        "subCategory": "null",
+        "description": "Part of Aurora's Teddy Bear collection Perfect gift for adults and children of all ages Traditional looking teddy bear",
         "rating":5,
-        "image": "https://i.ibb.co/NCYJJVk/f7ca98f183470ff52c2c9fc013409170.jpg",
+        "image": "https://i.ibb.co/pxVXPCp/stuff8.jpg",
+        "available" : 14,
         "moreImg": [
-            "https://i.ibb.co/NCYJJVk/f7ca98f183470ff52c2c9fc013409170.jpg",
-            "https://i.ibb.co/pXvkcNb/132a80c6e1fae3c1b9378129a57a4900.jpg",
-            "https://i.ibb.co/NCYJJVk/f7ca98f183470ff52c2c9fc013409170.jpg",
-            "https://i.ibb.co/WtxBqv4/1696676380816.jpg"
+            "https://i.ibb.co/pxVXPCp/stuff8.jpg",
+            "https://i.ibb.co/pxVXPCp/stuff8.jpg",
+            "https://i.ibb.co/pxVXPCp/stuff8.jpg",
+            "https://i.ibb.co/pxVXPCp/stuff8.jpg"
         ]
     },
     {

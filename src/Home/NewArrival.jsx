@@ -10,9 +10,11 @@ const Arrival = () => {
 
 
     return (
-        <section className="py-20 w-[90%] mt-20 mx-auto">
-             <Title title='new Arrival'/>
-            <div className='mt-16'>
+        <section className="py-20 w-[90%] mx-auto">
+            <div className='w-[60%] mx-auto'>
+                <Title title='new Arrival' />
+            </div>
+            <div className='mt-6'>
                 <Swiper
                     slidesPerView={3}
                     spaceBetween={30}

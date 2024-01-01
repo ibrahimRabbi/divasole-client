@@ -24,7 +24,7 @@ const Card = ({ data, category }) => {
                     <img className='hover:scale-110 duration-100' src={image} />
                 </Link>
                 {
-                    parseInt(available) > 0 ? '' : <div className="badge absolute top-3 right-2 text-xs text-white bg-red-600">sold out</div>
+                    parseInt(available) > 0 ? '' : <div className="badge absolute top-3 right-2 text-xs text-white bg-[#613d26]">sold out</div>
                 }
            </figure>
 

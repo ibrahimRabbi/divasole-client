@@ -1,0 +1,16 @@
+ {
+        "name":"Rabbi",
+        "price": 700,
+        "category" : "warner-bros",
+        "subCategory": "null",
+        "description": "Part of Aurora's Teddy Bear collection Perfect gift for adults and children of all ages Traditional looking teddy bear",
+        "rating":5,
+        "image": "https://i.ibb.co/pxVXPCp/stuff8.jpg",
+        "available" : 14,
+        "moreImg": [
+            "https://i.ibb.co/pxVXPCp/stuff8.jpg",
+            "https://i.ibb.co/pxVXPCp/stuff8.jpg",
+            "https://i.ibb.co/pxVXPCp/stuff8.jpg",
+            "https://i.ibb.co/pxVXPCp/stuff8.jpg"
+        ]
+    }

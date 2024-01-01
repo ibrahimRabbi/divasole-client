@@ -99,20 +99,21 @@ const SingleData = () => {
 
     return (
         <section>
-            <div className="w-[80%] lg:gap-16 gap-5 mx-auto py-28 grid lg:grid-cols-2">
+            <div className="w-[80%] lg:gap-16 gap-5 mx-auto mt-10 pb-20 grid lg:grid-cols-2">
                 <div>
                     <ImageGallery
                         showFullscreenButton={false}
                         showPlayButton={false}
                         thumbnailPosition="bottom"
                         useBrowserFullscreen={false}
+                        showNav={false}
                         items={images}
                     />
                 </div>
 
                 <div className='mt-5'>
-                    <p className="text font-semibold lg:text-4xl text-2xl">{data?.name}</p>
-                    <p className="font-semibold mt-4 text-zinc-800 text-sm">
+                    <p className="text font-semibold text-3xl">{data?.name}</p>
+                    <p className="font-semibold mt-4 text-zinc-800 text-xs">
                         {data?.description}
                     </p>
                     <div className='flex mt-7 items-center justify-between'>
@@ -131,7 +132,7 @@ const SingleData = () => {
                         <div className='flex flex-wrap gap-4'>
                             {availableSize.map(v => {
                                 return (
-                                    <div key={Math.random()} onClick={() => sizeHandler(v)} className={`${size === v ? 'bg-purple-500 text-slate-50 font-normal' : ''} border cursor-pointer font-semibold text-zinc-700 text-xs border-white p-2 rounded-lg`} >
+                                    <div key={Math.random()} onClick={() => sizeHandler(v)} className={`${size === v ? 'bg-[#613d26] text-slate-50 font-normal' : ''} border cursor-pointer border-[#613d26] font-semibold text-xs p-2 rounded-lg`}>
                                         {v} Inch
                                     </div>
                                 )
@@ -145,7 +146,7 @@ const SingleData = () => {
                         <li>Assable - vietnam</li>
                     </ul>
                     <div className="flex lg:mt-10 mt-5 justify-between items-center pr-12">
-                        <p className="text font-semibold text-2xl">
+                        <p className="text font-semibold text-2xl text-[#613d26]">
                             {data?.price}-TK
                         </p>
                         <Rating style={{ maxWidth: 110 }} value={data?.rating} />

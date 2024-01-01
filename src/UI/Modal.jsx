@@ -119,7 +119,7 @@ export default function Modal({ obj, open, setIsOpen }) {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-[70%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="w-[70%] transform overflow-hidden rounded-2xl bg-slate-100 border p-6 text-left align-middle shadow-xl transition-all">
                                     <div className='flex justify-start gap-14'>
                                         <img className='' width={400} src={image} alt="" />
                                         <div>
@@ -156,7 +156,7 @@ export default function Modal({ obj, open, setIsOpen }) {
 
                                             </Dialog.Description>
 
-                                            <div className="absolute mt-5 bottom-6 space-x-4">
+                                            <div className="mt-20 space-x-4">
                                                 <button type="button" className=' uppercase bg-red-400 hover:bg-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700  border-0 font-semibold text-zinc-950' onClick={closeModal}>cancel</button>
                                                 <Link to={`/category/${_id}`} className='bg-gradient-to-l uppercase from-amber-500 to-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>View Detailes</Link>
                                                 <button onClick={addToCartHandler} className='bg-gradient-to-l uppercase from-amber-500 to-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>Add To Cart</button>
