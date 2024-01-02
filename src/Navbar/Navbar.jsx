@@ -45,7 +45,7 @@ const Navbar = () => {
                 <div className='w-[95%] flex justify-between items-center mx-auto'>
                     {/* fast div */}
                     <Link to='/'>
-                        <img width={150} loading='lazy' src="../../public/assest/logo.png" alt="LOGO" />
+                        <img width={150} loading='lazy' src="https://i.ibb.co/xL4thqs/logo.png" alt="LOGO" />
                     </Link>
 
                     {/* middle div */}

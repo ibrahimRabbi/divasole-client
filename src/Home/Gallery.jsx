@@ -10,10 +10,10 @@ const Gallery = () => {
                 </div>
 
                 <div className='gallery lg:grid gap-8 pb-16'>
-                    <img src="../../public/assest/offer-1.webp" className='rounded-lg w-full' alt="" />
-                    <img src="../../public/assest/offer-2.webp" className='rounded-lg w-full' alt="" />
-                    <img src="../../public/assest/offer-3.png" className='rounded-lg w-full ' alt="" />
-                    <img src="../../public/assest/offer4.png" className='rounded-lg  w-full' alt="" />
+                    <img src="https://i.ibb.co/WFgPfbb/offer-1.webp" className='rounded-lg w-full' alt="" />
+                    <img src="https://i.ibb.co/9GsNs0H/offer-2.webp" className='rounded-lg w-full' alt="" />
+                    <img src="https://i.ibb.co/P5ChPhw/offer-3.png" className='rounded-lg w-full ' alt="" />
+                    <img src="https://i.ibb.co/gtT5hHZ/offer4.png" className='rounded-lg  w-full' alt="" />
                 </div>
             </div>
         </section>

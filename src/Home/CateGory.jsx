@@ -7,17 +7,17 @@ AOS.init();
 
 const CateGory = () => {
     const category = [
-        { category: 'softToys', subCategory: 'null', name: "Soft Toys", img: "../../public/assest/stuff/octopus_babby_doll_stuff2.webp" },
-        { category: 'teddy', subCategory: 'null', name: "Teddy Bear", img: "../../public/assest/teddy/teddy3.webp" },
-        { category: "warner-bros", subCategory: 'null', name: "Warners Bros", img: "../../public/assest/tweety.webp" },
-        { category: "marvel", subCategory: 'null', name: "Characters", img: "../../public/assest/character1.jpg" },
-        { category: 'avangers', subCategory: 'avengers', name: "Avengers", img: "../../public/assest/avengers.webp" },
-        { category: "star-wars", subCategory: 'null', name: "Star wars", img: "../../public/assest/starWars.webp" },
+        { category: 'softToys', subCategory: 'null', name: "Soft Toys", img: "https://i.ibb.co/X7Kb0Zz/octopus-babby-doll-stuff2.webp" },
+        { category: 'teddy', subCategory: 'null', name: "Teddy Bear", img: "https://i.ibb.co/qMMBJwt/teddy3.webp" },
+        { category: "warner-bros", subCategory: 'null', name: "Warners Bros", img: "https://i.ibb.co/M62zKjT/tweety.webp" },
+        { category: "marvel", subCategory: 'null', name: "Characters", img: "https://i.ibb.co/BjFt74t/character1.jpg" },
+        { category: 'avangers', subCategory: 'avengers', name: "Avengers", img: "https://i.ibb.co/XkxKwvt/avengers.webp" },
+        { category: "star-wars", subCategory: 'null', name: "Star wars", img: "https://i.ibb.co/N7thNj8/starWars.webp" },
         { category: 'spiderman', subCategory: 'spiderman', name: "Spiderman", img: 'https://i.ibb.co/zR8QxRG/b2a0d1d5-625c-4603-a52f-12e8ca12e4e1.jpg' },
         
-        { category: "transfarmer", subCategory: 'null', name: "Transfarmer", img: "../../public/assest/transfarmer.jpg" },
+        { category: "transfarmer", subCategory: 'null', name: "Transfarmer", img: "https://i.ibb.co/jyNJJJV/transfarmer.jpg" },
 
-        { category: "car", subCategory: 'null', name: "Car Toys", img: "../../public/assest/car.webp" },
+        { category: "car", subCategory: 'null', name: "Car Toys", img: "https://i.ibb.co/WGfhbr7/car.webp" },
     ]
     
 
