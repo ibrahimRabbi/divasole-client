@@ -18,7 +18,7 @@ const Card = ({ data, category }) => {
 
     return (
 
-        <div className="card backDrp border card-compact h-[450px] shadow-xl">
+        <div className="card border card-compact lg:h-[450px] h-[300px] shadow-xl">
             <figure>
                 <Link to={`/category/${_id}`}>
                     <img className='hover:scale-110 duration-100' src={image} />
@@ -30,12 +30,12 @@ const Card = ({ data, category }) => {
 
             <div className="card-body">
                 <Link to={`/category/${_id}`}>
-                    <h2 className="card-title text-zinc-800 hover:text-red-900">{name}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <h2 className="lg:text-xl text-sm font-semibold text-zinc-800 hover:text-red-900">{name}</h2>
+                    <p className='mt-4'>If a dog chews shoes whose shoes does he choose?</p>
                 </Link>
                 <div className="flex justify-between items-center mt-5">
                     <div>
-                        <h1 className='text-2xl font-semibold text-zinc-950'>{price}-TK</h1>
+                        <h1 className='lg:text-2xl font-semibold text-zinc-950'>{price}-TK</h1>
                         <Rating style={{ maxWidth: 80 }} value={rating}   />
                     </div>
                     <div>

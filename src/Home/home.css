@@ -3,9 +3,7 @@
     color: #613d26;
  }
 
-.gallery{  
-    grid-template-columns: 2fr 2fr;  
-}
+ 
 
 .pp{
     border-radius: 5%;

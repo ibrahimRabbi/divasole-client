@@ -11,7 +11,7 @@ const CategoryCard = ({ data }) => {
     return (
         <Link to={`${data.category}`} className='text-center banner p-6 rounded-lg hover:shadow-xl hover:scale-105 duration-100'>
             <div className="avatar">
-                <div className="w-32">
+                <div className="lg:w-32 w-24">
                     <img loading='lazy' src={data.img}/>
                 </div>
             </div>    

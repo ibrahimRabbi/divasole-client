@@ -50,7 +50,7 @@ const Navbar = () => {
 
                     {/* middle div */}
                     
-                         <div className='w-[32%]'>
+                         <div className='w-[32%] lg:inline-block hidden'>
                                     <form className="input-group " onSubmit={searchHandler}>
                                         <input name='name' type="text" placeholder="Search by product name" className="input input-bordered w-[80%]" />
                                         <button type='submit' className="btn bg-[#624B3E] hover:bg-red-700 btn-square">

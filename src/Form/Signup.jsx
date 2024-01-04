@@ -87,17 +87,17 @@ const SignUp = () => {
         <section className="bg p-16">
 
 
-            <div className="  mx-auto w-1/2 backDrp rounded-lg p-10">
+            <div className="w-full mx-auto lg:w-1/2 rounded-lg lg:p-10">
                 <div className="w-1/2 mx-auto" >
                     <h1 className="text-3xl font-semibold text-center">Sign up</h1>
-                    <hr className="mt-2 border-red-400" />
+                    <hr className="mt-2 border-[#613d26]" />
                 </div>
                 <form className="space-y-5 mt-7" onSubmit={handleSubmit(submit)}>
                     <div className="grid grid-cols-2 gap-5">
                         <div className="form-control w-full">
                             <label className="label"><span className="label-text">Enter your full name*</span></label>
                             <input
-                                className="border bg-transparent border-red-500 rounded-2xl p-2" placeholder='name'
+                                className="border bg-transparent border-[#613d26] rounded-2xl p-2" placeholder='name'
                                 {...register('name', { required: true })} />
                             {errors.name && <p className="text-red-500">name is requird</p>}
                         </div>
@@ -105,9 +105,9 @@ const SignUp = () => {
                         <div className="form-control w-full">
                             <label className="label"><span className="label-text">Enter Email*</span></label>
                             <input type="email"
-                                className="border bg-transparent border-red-500 rounded-2xl p-2" placeholder='email'
+                                className="border bg-transparent border-[#613d26] rounded-2xl p-2" placeholder='email'
                                 {...register('email', { required: true })} />
-                            {errors.email && <p className="text-red-500">email is requird</p>}
+                            {errors.email && <p className="text-red-600">email is requird</p>}
                         </div>
 
 
@@ -115,18 +115,18 @@ const SignUp = () => {
                         <div className="form-control w-full">
                             <label className="label"><span className="label-text">Your Phone number*</span></label>
                             <input
-                                className="border bg-transparent border-red-500 rounded-2xl p-2" type="number" placeholder='number'
+                                className="border bg-transparent border-[#613d26] rounded-2xl p-2" type="number" placeholder='number'
                                 {...register('number', { required: true, minLength: 11, maxLength: 11 })} />
-                            {errors.number?.type === 'required' && <p className="text-red-500">number is requird</p>}
-                            {errors.number?.type === 'minLength' && <p className="text-red-500">input a valid mobail number</p>}
-                            {errors.number?.type === 'maxLength' && <p className="text-red-500">input a valid mobail number</p>}
+                            {errors.number?.type === 'required' && <p className="text-red-600">number is requird</p>}
+                            {errors.number?.type === 'minLength' && <p className="text-red-600">input a valid mobail number</p>}
+                            {errors.number?.type === 'maxLength' && <p className="text-red-600">input a valid mobail number</p>}
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label"><span className="label-text">your Image*</span></label>
-                            <input type="file" className="file-input bg-transparent border-red-500 file-input-bordered file-input-error w-full max-w-xs" {...register('image', { required: true })}
+                            <input type="file" className="file-input bg-transparent border-[#613d26] file-input-bordered w-full max-w-xs" {...register('image', { required: true })}
                             />
-                            {errors.image && <p className="text-red-500">your image is requird</p>}
+                            {errors.image && <p className="text-red-600">your image is requird</p>}
                         </div>
 
 
@@ -134,23 +134,23 @@ const SignUp = () => {
                         <div className="form-control w-full">
                             <label className="label"><span className="label-text">type new password*</span></label>
                             <input
-                                className="border bg-transparent border-red-500 rounded-2xl p-2" placeholder='password'
+                                className="border bg-transparent border-[#613d26] rounded-2xl p-2" placeholder='password'
                                 {...register('password', {
                                     required: true,
                                     pattern: /(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])/,
                                     minLength: 6
                                 })} />
-                            {errors.password?.type === 'required' && <p className="text-red-500">password is requird</p>}
-                            {errors.password?.type === 'minLength' && <p className="text-red-500">password minimum 6 characters</p>}
-                            {errors.password?.type === 'pattern' && <p className="text-red-500">password must have a uppercase and number</p>}
+                            {errors.password?.type === 'required' && <p className="text-red-600">password is requird</p>}
+                            {errors.password?.type === 'minLength' && <p className="text-red-600">password minimum 6 characters</p>}
+                            {errors.password?.type === 'pattern' && <p className="text-red-600">password must have a uppercase and number</p>}
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label"><span className="label-text">confirm password*</span></label>
                             <input
-                                className="border bg-transparent border-red-500 rounded-2xl p-2" placeholder='confirm password'
+                                className="border bg-transparent border-[#613d26] rounded-2xl p-2" placeholder='confirm password'
                                 {...register('confirm', { required: true })} />
-                            {errors.confirm && <p className="text-red-500">confirm password is requird</p>}
+                            {errors.confirm && <p className="text-red-600">confirm password is requird</p>}
                         </div>
                     </div>
 

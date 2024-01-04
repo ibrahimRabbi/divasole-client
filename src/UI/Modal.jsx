@@ -119,8 +119,8 @@ export default function Modal({ obj, open, setIsOpen }) {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-[70%] transform overflow-hidden rounded-2xl bg-slate-100 border p-6 text-left align-middle shadow-xl transition-all">
-                                    <div className='flex justify-start gap-14'>
+                                <Dialog.Panel className="lg:w-[70%] w-[85%] transform overflow-hidden rounded-2xl bg-slate-100 border p-6 text-left align-middle shadow-xl transition-all">
+                                    <div className='flex lg:flex-row flex-col justify-start gap-5 lg:gap-14'>
                                         <img className='' width={400} src={image} alt="" />
                                         <div>
                                             <Dialog.Title as="h3" className="text-xl font-medium leading-6">
@@ -129,7 +129,7 @@ export default function Modal({ obj, open, setIsOpen }) {
 
                                             <Dialog.Description className='mt-6'>
                                                 <div className='flex mt-10 justify-between w-[95%] items-center'>
-                                                    <h1 className='text-2xl text-zinc-950 font-semibold mt-5'>{`price ${price}-TK`}</h1>
+                                                    <h1 className='text-xl lg:text-2xl text-zinc-950 font-semibold mt-5'>{`price ${price}-TK`}</h1>
                                                     <div>
                                                         <p className='font-semibold'>Quantity:</p>
                                                         <div className='flex justify-center items-center px-2 bg-slate-200 gap-5 rounded-md'>

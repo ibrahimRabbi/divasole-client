@@ -12,7 +12,7 @@ const Popular = () => {
                 <Title title='Popular Toys'/>
             </div>
             
-            <div className='grid grid-cols-4 gap-10'>
+            <div className='grid grid-cols-2 lg:grid-cols-4 lg:gap-10 gap-5'>
                 {
                     data.map(v=><Card key={v._id} data={v} category={v._category}/>)
                 }

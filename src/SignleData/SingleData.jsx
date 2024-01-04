@@ -99,7 +99,7 @@ const SingleData = () => {
 
     return (
         <section>
-            <div className="w-[80%] lg:gap-16 gap-5 mx-auto mt-10 pb-20 grid lg:grid-cols-2">
+            <div className="lg:w-[80%] w-[90%] lg:gap-16 gap-5 mx-auto mt-10 pb-20 grid lg:grid-cols-2 grid-cols-1">
                 <div>
                     <ImageGallery
                         showFullscreenButton={false}

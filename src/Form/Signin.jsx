@@ -68,9 +68,9 @@ const Signin = () => {
         <div className="hero min-h-screen bg">       
              
                 <div className="hero-content gap-20">
-                <img width={500} src="https://i.ibb.co/yN0CJZ3/experimental-3d-morphis-bank-account-management-using-a-cell-phone.png" alt="" />  
+                <img className='hidden lg:inline-block' width={500} src="https://i.ibb.co/yN0CJZ3/experimental-3d-morphis-bank-account-management-using-a-cell-phone.png"/>  
                 
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl backDrp">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
                     
                     <form onSubmit={handleSubmit(loginHandler)} className="card-body">
                             <div className="form-control w-full">

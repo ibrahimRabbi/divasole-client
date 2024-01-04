@@ -26,7 +26,7 @@ const CateGory = () => {
             <div className='w-1/2 text-center mx-auto'>
                 <Title title='Shop by Category'/>
             </div>
-            <div data-aos="fade-right" className='flex relative -top-6  flex-wrap justify-center items-center gap-10'>{category.map(v => <CategoryCard key={Math.random()} data={v} />)}</div>
+            <div data-aos="fade-right" className='flex relative -top-6  flex-wrap justify-center items-center lg:gap-10 gap-8'>{category.map(v => <CategoryCard key={Math.random()} data={v} />)}</div>
         </section>
     );
 };

@@ -51,7 +51,7 @@ const DaynamicCate = () => {
                     <Sidebar category={category} sortingHandler={sortingHandler} />
                     <div className='mt-7'>
                         <Title title={category} />
-                        <div className='grid grid-cols-3 gap-11 mb-16'>
+                        <div className='grid lg:grid-cols-3 grid-cols-1 gap-11 mb-16'>
                             {data.map(v => <Card key={v._id} data={v} category={category} />)}
                         </div>
                     </div>
