@@ -30,7 +30,7 @@ const Calculate = ({data}) => {
     }
      
     return (
-        <div className='border rounded-lg h-96 sticky p-5 top-28 backDrp'>
+        <div className='border rounded-lg h-96 lg:sticky p-5 top-28'>
             <h1 className='text-center font-semibold'>Shopping Summery</h1>
             <div className='mt-5 text-zinc-950 text-sm'>
                 <h1 className="  mt-2">Quantitiy : {quantitiy}</h1>
