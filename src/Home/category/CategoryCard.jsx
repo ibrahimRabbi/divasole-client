@@ -15,7 +15,7 @@ const CategoryCard = ({ data }) => {
                     <img className='hover:scale-105 duration-100' loading='lazy' src={data.img}/>
                 </div>
             </div>    
-            <h1 className='text-xl font-semibold'>{data.name}</h1> 
+            <h1 className='lg:text-xl text-sm font-semibold'>{data.name}</h1> 
         </Link>
     );
 };

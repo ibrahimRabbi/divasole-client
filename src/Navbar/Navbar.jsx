@@ -61,7 +61,7 @@ const Navbar = () => {
                         </div>
                    
                     {/* last div */}
-                    <div className='flex lg:w-[23%] w-[28%] items-center welcome justify-between gap-7'>
+                    <div className='flex lg:w-[23%] w-[35%] items-center welcome justify-between gap-7'>
                         <Link className='hidden lg:flex items-center gap-2'>
                             <TfiEmail className='text-3xl text-zinc-700 font-bold' />
                             <div className='text-sm'>
