@@ -7,15 +7,19 @@ const Popular = () => {
     const { data = [] } = usePopularToysQuery(5)
      
     return (
-        <section className='w-[90%] mt-20 mx-auto'>
-            <div className='w-[60%] text-center mx-auto'>
-                <Title title='Popular Toys'/>
-            </div>
+        <section className='w-full my-14 mx-auto'>
+            <h1 className='banner text-2xl font-bold'>
+                Hot and Trendy products :
+            </h1>
             
-            <div className='grid grid-cols-2 lg:grid-cols-4 lg:gap-10 gap-5'>
+            <div className='mt-2 grid grid-cols-2 lg:grid-cols-4 lg:gap-10 gap-5'>
                 {
                     data.map(v=><Card key={v._id} data={v} category={v._category}/>)
                 }
+            </div>
+
+            <div className='text-center mt-10'>
+                <button className='btn btn-outline btn-warning'>Load More Product</button>
             </div>
          </section>
     );

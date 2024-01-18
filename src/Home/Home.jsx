@@ -1,20 +1,19 @@
 import React from 'react';
-import Banner from './Banner';
-import CateGory from './CateGory';
+import CateGory from './category/CateGory';
 import Popular from './Popular';
-import Arrival from './NewArrival';
-import Gallery from './Gallery';
-import Marque from './Marquee';
+import Banner from './banner/Banner';
+import Offer from './Offer';
+import OurFeatures from './OurFeatures';
 
 const Home = () => {
     return (
-        <div>
-            <Banner />
-            <CateGory />
-            <Gallery />
-            <Popular /> 
-            <Arrival />
-            <Marque />
+        <div className='lg:w-[90%] w-[90%] mx-auto'>
+            <Banner/>
+            <Offer />
+            <OurFeatures/>
+            <CateGory/>
+            <Popular/> 
+            
         </div>
     );
 };
