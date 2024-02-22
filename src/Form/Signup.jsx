@@ -13,66 +13,35 @@ import Loader from "../UI/Loader";
 
 const SignUp = () => {
 
-    const { signup, profile, loading } = useContext(Context)
+
     const { handleSubmit, register, formState: { errors } } = useForm()
     const navigate = useNavigate()
     const [error, setError] = useState('')
     const [load, setLoad] = useState(false)
+    const genarateOtp = parseInt(10000 + Math.random() * 900000)
+
 
 
     const submit = (data) => {
-
-        const { name, email, number, image, password, confirm } = data
-        const formData = new FormData()
-        formData.append('image', image[0])
-
-
-        if (password !== confirm) {
-            setError('confirm password doesnt match')
+        if (data.password !== data.confirm) {
+            setError('confirm password did not match')
         } else {
             setError('')
             setLoad(true)
-            const userObj = { email, password, name, }
-            fetch(`https://api.imgbb.com/1/upload?key=980c5aa9b32d7a954c2c27ea3bb7f131`, {
+
+            fetch('https://divasole-server.vercel.app/verification', {
                 method: 'POST',
-                body: formData
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ otp: genarateOtp, email: data.email })
             })
                 .then(res => res.json())
                 .then(res => {
-                    if (res.data?.url) {
-                        const img = res.data.url
-                        signup(email, password)
-                            .then(res => {
-                                setLoad(true)
-                                profile(res.user, name, img, number)
-                                fetch('https://toys-server-ebon.vercel.app/user', {
-                                    method: "POST",
-                                    headers: { 'content-type': 'application/json' },
-                                    body: JSON.stringify({ ...userObj, img })
-                                })
-                                    .then(res => res.json())
-                                    .then(res => {
-                                        setLoad(false)
-                                        if (res.insertedId) {
-                                            Swal.fire({
-                                                position: 'center',
-                                                icon: 'success',
-                                                title: 'Sign up Successfull',
-                                                showConfirmButton: false,
-                                                timer: 1500
-                                            })
-                                            navigate('/')
-                                        }
-                                    })
-
-                            })
-                            .catch(error => {
-                                setLoad(false)
-                                if (error.message == "Firebase: Error (auth/email-already-in-use).") {
-                                    setError('this email already have an account')
-                                }
-                            })
+                    if (res.accepted[0] === data.email) {
+                        setLoad(false)
+                        navigate('verified', { state: { data, genarateOtp } })
                     }
+
+
                 })
 
         }
@@ -84,52 +53,37 @@ const SignUp = () => {
 
 
     return (
-        <section className="bg p-16">
+        <section className="bg">
 
-
-            <div className="w-full mx-auto lg:w-1/2 rounded-lg lg:p-10">
+            <div className="w-full mx-auto rounded-lg lg:p-5">
                 <div className="w-1/2 mx-auto" >
                     <h1 className="text-3xl font-semibold text-center">Sign up</h1>
                     <hr className="mt-2 border-[#613d26]" />
                 </div>
-                <form className="space-y-5 mt-7" onSubmit={handleSubmit(submit)}>
-                    <div className="grid grid-cols-2 gap-5">
-                        <div className="form-control w-full">
-                            <label className="label"><span className="label-text">Enter your full name*</span></label>
-                            <input
-                                className="border bg-transparent border-[#613d26] rounded-2xl p-2" placeholder='name'
-                                {...register('name', { required: true })} />
-                            {errors.name && <p className="text-red-500">name is requird</p>}
-                        </div>
+                <form className="space-y-3 mt-7 lg:w-1/2 w-[90%] mx-auto" onSubmit={handleSubmit(submit)}>
 
+                    <div className="form-control w-full">
+                        <label className="label"><span className="label-text">Enter your full name*</span></label>
+                        <input
+                            className="border bg-transparent border-[#613d26] rounded-2xl p-2" placeholder='Ex : MD Sihab Hossain'
+                            {...register('name', { required: true })} />
+                        {errors.name && <p className="text-red-500">name is requird</p>}
+                    </div>
+                    <div className=" flex flex-col lg:grid grid-cols-2 gap-5">
                         <div className="form-control w-full">
                             <label className="label"><span className="label-text">Enter Email*</span></label>
                             <input type="email"
-                                className="border bg-transparent border-[#613d26] rounded-2xl p-2" placeholder='email'
+                                className="border bg-transparent border-[#613d26] rounded-2xl p-2" placeholder='Ex : abc@gmail.com'
                                 {...register('email', { required: true })} />
                             {errors.email && <p className="text-red-600">email is requird</p>}
                         </div>
 
-
-
-                        <div className="form-control w-full">
-                            <label className="label"><span className="label-text">Your Phone number*</span></label>
-                            <input
-                                className="border bg-transparent border-[#613d26] rounded-2xl p-2" type="number" placeholder='number'
-                                {...register('number', { required: true, minLength: 11, maxLength: 11 })} />
-                            {errors.number?.type === 'required' && <p className="text-red-600">number is requird</p>}
-                            {errors.number?.type === 'minLength' && <p className="text-red-600">input a valid mobail number</p>}
-                            {errors.number?.type === 'maxLength' && <p className="text-red-600">input a valid mobail number</p>}
-                        </div>
-
                         <div className="form-control w-full">
                             <label className="label"><span className="label-text">your Image*</span></label>
-                            <input type="file" className="file-input bg-transparent border-[#613d26] file-input-bordered w-full max-w-xs" {...register('image', { required: true })}
+                            <input type="file" className="file-input file-input-warning bg-transparent border-[#613d26] file-input-bordered w-full max-w-xs" {...register('image', { required: true })}
                             />
                             {errors.image && <p className="text-red-600">your image is requird</p>}
                         </div>
-
-
 
                         <div className="form-control w-full">
                             <label className="label"><span className="label-text">type new password*</span></label>

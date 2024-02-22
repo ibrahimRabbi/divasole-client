@@ -60,56 +60,56 @@ const Signin = () => {
     }
 
     if (loading) {
-        return  <Loader/>
+        return <Loader />
     }
 
-    return (      
-            
-        <div className="hero min-h-screen bg">       
-             
-                <div className="hero-content gap-20">
-                <img className='hidden lg:inline-block' width={500} src="https://i.ibb.co/yN0CJZ3/experimental-3d-morphis-bank-account-management-using-a-cell-phone.png"/>  
-                
+    return (
+
+        <div className="hero mt-10 bg">
+
+            <div className="hero-content gap-20">
+                <img className='hidden lg:inline-block' width={500} src="https://i.ibb.co/yN0CJZ3/experimental-3d-morphis-bank-account-management-using-a-cell-phone.png" />
+
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
-                    
+
                     <form onSubmit={handleSubmit(loginHandler)} className="card-body">
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text text-zinc-950">email</span>
-                                </label>
-                                <input className="border bg-transparent border-red-500 rounded-2xl p-2" placeholder="email" {...register('email', { required: true })} />
-                                {errors.email && <p className="text-red-500">email ius requird</p>}
-                            </div>
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text text-zinc-950">email</span>
+                            </label>
+                            <input className="border bg-transparent border-red-500 rounded-2xl p-2" placeholder="email" {...register('email', { required: true })} />
+                            {errors.email && <p className="text-red-500">email ius requird</p>}
+                        </div>
 
-                            <div className="form-control w-full  ">
-                                <label className="label">
+                        <div className="form-control w-full  ">
+                            <label className="label">
                                 <span className="label-text text-zinc-950">password</span>
-                                </label>
+                            </label>
                             <input className="border bg-transparent border-red-500 rounded-2xl p-2" placeholder="password" {...register('password', { required: true })} />
-                                {errors.password && <p className="text-red-500">password is requird</p>}
-                            </div>
+                            {errors.password && <p className="text-red-500">password is requird</p>}
+                        </div>
 
-                            <div className="form-control w-full  ">
-                                <label className="label">
+                        <div className="form-control w-full  ">
+                            <label className="label">
                                 <span className="label-text text-zinc-950">confirm-password</span>
-                                </label>
+                            </label>
                             <input className="border bg-transparent border-red-500 rounded-2xl p-2" placeholder="confirm-password" {...register('confirm', { required: true })} />
-                                {errors.confirm && <p className="text-red-500">confirm password is required</p>}
-                            </div>
-                            <p className='text-red-600 font-semibold'>{error}</p>
-                            <button type='submit' className='bg-gradient-to-l mt-2 uppercase from-amber-500 to-red-500 btn shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>Sign in</button>
+                            {errors.confirm && <p className="text-red-500">confirm password is required</p>}
+                        </div>
+                        <p className='text-red-600 font-semibold'>{error}</p>
+                        <button type='submit' className='bg-gradient-to-l mt-2 uppercase from-amber-500 to-red-500 btn shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>Sign in</button>
 
-                            <p className="font-semibold  text-sm text-zinc-950 text-center mt-5">dont Have an Account? <Link to='/signup' className="text-red-600 font-bold">Sign Up</Link> insted</p>
-                            <div className="divider">OR</div>
-                            <div>
-                                <SigninProvider redirect={redirectTo} />
-                            </div>
-                        </form>
-                    </div>
+                        <p className="font-semibold  text-sm text-zinc-950 text-center mt-5">dont Have an Account? <Link to='/signup' className="text-red-600 font-bold">Sign Up</Link> insted</p>
+                        <div className="divider">OR</div>
+                        <div>
+                            <SigninProvider redirect={redirectTo} />
+                        </div>
+                    </form>
                 </div>
             </div>
-                        
-       
+        </div>
+
+
     );
 };
 

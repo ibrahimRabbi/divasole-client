@@ -3,7 +3,6 @@ import Layout from "./Layout/Layout"
 import Home from "./Home/Home"
 import DaynamicCate from "./DaynamicCategory/DaynamicCate"
 import SingleData from "./SignleData/SingleData"
-import Payment from "./Payment/Payment"
 import { Provider } from "react-redux"
 import store from "./redux/store"
 import Cart from "./cart/Cart"
@@ -11,14 +10,21 @@ import AuthContext from "./Authentication/AuthContext"
 import SignUp from "./Form/Signup"
 import Signin from "./Form/Signin"
 import PrivetRoute from "./privetRoute/PrivetRoute"
-import AddToys from "./Seller/AddToy"
 import Search from "./Search/Search"
-import AllToys from "./Seller/AllToys"
-import MyToys from "./Seller/MyToys"
-import UpdateToy from "./Seller/UpdateToy"
- 
+import Contact from "./contact/Contact"
+import BuyNow from "./directBuyNow/BuyNow"
+import Verification from "./Form/Verification"
+import OrderForm from "./PlaceOrderForm/OrderForm"
+import Invoice from "./Invoice/Invoice"
+import DashBoard from "./Admin/DashBoard"
+import MyToys from "./Admin/MyToys"
+import UpdateToy from "./Admin/UpdateToy"
+import AddToys from "./Admin/AddToy"
+import Orders from "./Admin/Orders"
+import ViewDetail from "./Admin/ViewDetail"
 
- 
+
+
 
 function App() {
 
@@ -29,67 +35,104 @@ function App() {
       children: [
         {
           path: '/',
-          element:<Home/>
+          element: <Home />
         },
         {
           path: ':category',
-          element: <DaynamicCate/>,
+          element: <DaynamicCate />
         },
         {
-          path: '/category/:id',
-          element:<SingleData/>
+          path: '/:category/:id',
+          element: <SingleData />
         },
         {
           path: '/cart',
-          element: <PrivetRoute><Cart/></PrivetRoute>
+          element: <PrivetRoute><Cart /></PrivetRoute>
+        },
+        {
+          path: '/buynow',
+          element: <BuyNow />
         },
         {
           path: '/addtoys',
-          element:<AddToys/>
-        },
-        {
-          path: '/alltoys',
-          element:<AllToys/>
+          element: <AddToys />
         },
         {
           path: '/mytoys',
-          element:<MyToys/>
+          element: <MyToys />
         },
         {
           path: '/update/:id',
           element: <UpdateToy />,
-           
+
         },
         {
-          path: '/search',
-          element:<Search/>
+          path: '/search/:name',
+          element: <Search/>
         },
-         
+        {
+          path: '/contact',
+          element: <Contact />
+        },
+        {
+          path: '/place-order',
+          element: <OrderForm />
+        }
       ]
     },
     {
-      path: '/payment',
-      element:<Payment/>
+      path: '/signup',
+      element: <SignUp />
     },
     {
-      path: '/signup',
-      element: <SignUp/>
+      path: '/signup/verified',
+      element: <Verification />
     },
     {
       path: '/signin',
-      element: <Signin/>
+      element: <Signin />
+    },
+    {
+      path: '/invoice',
+      element: <Invoice />
+    },
+    {
+      path: '/dashboard',
+      element: <DashBoard />,
+      children: [
+        {
+          path: 'addproduct',
+          element: <AddToys />
+        },
+        {
+          path: 'orders',
+          element: <Orders />
+        },
+        {
+          path: '/dashboard/order/view-details',
+          element: <ViewDetail/>
+        },
+        {
+          path: 'manage',
+          element: <MyToys />
+        },
+        {
+          path: 'update/:id',
+          element: <UpdateToy />
+        }
+      ]
     }
-   
+
   ])
-   
+
   return (
     <Provider store={store}>
       <AuthContext>
         <RouterProvider router={router} />
       </AuthContext>
     </Provider>
-     
-     
+
+
   )
 }
 

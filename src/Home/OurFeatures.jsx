@@ -5,7 +5,7 @@ import { MdOutlineVerifiedUser } from "react-icons/md";
 import { GiReturnArrow } from "react-icons/gi";
 const OurFeatures = () => {
     return (
-        <section className='w-full grid lg:grid-cols-4 grid-cols-2 gap-5 mt-10 banner'>
+        <section className='w-full hidden lg:grid lg:grid-cols-4 grid-cols-2 gap-5 mt-10 banner'>
             <div className='bg-slate-100 p-2 rounded-lg text-center'>
                 <FcApproval className='text-4xl mx-auto' />
                 <h1 className='text-md font-bold mt-2'>Authentic Products</h1>

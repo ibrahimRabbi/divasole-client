@@ -7,7 +7,7 @@ import OurFeatures from './OurFeatures';
 
 const Home = () => {
     return (
-        <div className='lg:w-[90%] w-[90%] mx-auto'>
+        <div className='lg:w-[90%] w-[95%] mx-auto'>
             <Banner/>
             <Offer />
             <OurFeatures/>

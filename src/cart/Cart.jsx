@@ -5,20 +5,15 @@ import Calculate from './calculate';
 import { Context } from '../Authentication/AuthContext';
 import { Roller } from 'react-spinners-css';
 import Swal from 'sweetalert2';
-import './cart.css'
+import './cart.css';
 import Loader from '../UI/Loader';
 
 const Cart = () => {
     const { user } = useContext(Context)
-
     const { data = [], refetch, isLoading } = useCartDataQuery(user?.email)
 
-    useEffect(() => {
-        refetch()
-    }, [])
-
     const deleteHandler = (id) => {
-        fetch(`https://toys-server-ebon.vercel.app/cart/${id}`, { method: 'DELETE' })
+        fetch(`https://divasole-server.vercel.app/deleteCartData/${id}`, { method: 'DELETE' })
             .then((res) => res.json())
             .then(res => {
                 if (res.deletedCount > 0) {
@@ -34,12 +29,17 @@ const Cart = () => {
             })
     }
 
+    useEffect(() => {
+        refetch()
+    }, [])
+
+
     if (!user) {
         return <Loader />
     }
 
     if (isLoading) {
-        return <Loader/>
+        return <Loader />
     }
 
     return (

@@ -6,7 +6,7 @@ import { getData } from "./baseApi/baseApi";
 const store = configureStore({
     reducer: {
         [getData.reducerPath]:getData.reducer,
-        sortingData : slice
+        searchBox : slice
     },
     middleware: (getDefaultMiddleware) => {
        return getDefaultMiddleware().concat(getData.middleware)

@@ -2,19 +2,19 @@ import { createSlice } from "@reduxjs/toolkit"
 
 
 const initialState = {
-   sortingData : []
+    searchInput: ''
 }
 
 const slice = createSlice({
-    name: 'fst-slice',
-     initialState,
+    name: 'fst-test',
+    initialState,
     reducers: {
-        handler: (state,{payload}) => {
-            state.sortingData = payload
+        searchInputHandler: (e,state, { payload }) => {
+            state.testdata =  e.target.value
         }
     }
 })
 
-export const {handler} =  slice.actions
+export const { searchInputHandler } = slice.actions
 export default slice.reducer
 

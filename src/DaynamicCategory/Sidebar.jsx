@@ -10,10 +10,10 @@ import ActiveLink from '../UI/ActiveLink';
 
 
 const Sidebar = ({ sortingHandler }) => {
-    const sorting = ['New Arrival', 'Rating', 'Low price', 'High price']
+    const sorting = ['New Arrival', 'Rating', 'Low price', 'High price','Best Deal']
     
     return (
-        <div className='border bg-slate-100 border-t-0 border-b-0 p-5'>
+        <div className='border hidden lg:inline-block bg-slate-100 border-t-0 border-b-0 p-5'>
 
             <div>
                 <p className='text-zinc-800 ml-2 font-semibold'>Sort By:</p>
@@ -28,14 +28,14 @@ const Sidebar = ({ sortingHandler }) => {
                         <details open>
                             <summary>choose your category</summary>
                             <ul>
-                                <li><ActiveLink to='/softToys'>Soft Toys</ActiveLink></li>
-                                <li><ActiveLink to='/teddy'>Teddy Bear</ActiveLink></li>
-                                <li><ActiveLink to='/marvel'>Marvel</ActiveLink></li>
-                                <li><ActiveLink to='/avangers'>Avangers</ActiveLink></li>
-                                <li><ActiveLink to='/spiderman'>spiderman</ActiveLink></li>
-                                <li><ActiveLink to='/star-wars'>star-wars</ActiveLink></li>
-                                <li><ActiveLink to='/warner-bros'>warner-bros</ActiveLink></li>
-                                <li><ActiveLink to='/transfarmer'>Transfarmer</ActiveLink></li>
+                                <li><ActiveLink to='/mens-shoes'>Mens Shoes</ActiveLink></li>
+                                <li><ActiveLink to='/kameez'>Kameez</ActiveLink></li>
+                                <li><ActiveLink to='/canvas'>Canvas</ActiveLink></li>
+                                <li><ActiveLink to='/t-shirt'>T-shirt</ActiveLink></li>
+                                <li><ActiveLink to='/punjabi'>Punjabi</ActiveLink></li>
+                                <li><ActiveLink to='/teddy bear'>Teddy bear</ActiveLink></li>
+                                <li><ActiveLink to='/Mobail'>Mobail</ActiveLink></li>
+                                <li><ActiveLink to='/Kitchen Accessories'>Kitchen Accessories</ActiveLink></li>
                             </ul>
                         </details>
                     </li>

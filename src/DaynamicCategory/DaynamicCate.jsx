@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Card from './Card';
-import Title from '../UI/Title';
 import './daynamic.css';
 import Sidebar from './sidebar';
 import Loader from '../UI/Loader';
@@ -14,10 +13,9 @@ const DaynamicCate = () => {
     const [data, setData] = useState([])
 
 
-
     const sortingHandler = (data) => {
         setLoader(true)
-        fetch(`https://toys-server-ebon.vercel.app/data/${category}?sort=${data}`)
+        fetch(`https://divasole-server.vercel.app/data/${category}?sort=${data}`)
             .then(res => res.json())
             .then(res => {
                 setData(res)
@@ -27,16 +25,14 @@ const DaynamicCate = () => {
 
     useEffect(() => {
         setLoader(true)
-        fetch(`https://toys-server-ebon.vercel.app/data/${category}`)
+        fetch(`https://divasole-server.vercel.app/data/${category}`)
             .then(res => res.json())
             .then(res => {
                 setData(res)
                 setLoader(false)
+
             })
     }, [category])
-
-
-
 
 
     if (loading) {
@@ -45,13 +41,13 @@ const DaynamicCate = () => {
 
     return (
         <div>
-            <div className='w-[95%]'>
+            <div className='w-[95%] lg:ml-0 mx-auto'>
 
                 <div className='grid gap-10'>
                     <Sidebar category={category} sortingHandler={sortingHandler} />
                     <div className='mt-7'>
-                        <Title title={category} />
-                        <div className='grid lg:grid-cols-3 grid-cols-1 gap-11 mb-16'>
+
+                        <div className='grid lg:grid-cols-4 grid-cols-2 gap-4 mb-16'>
                             {data.map(v => <Card key={v._id} data={v} category={category} />)}
                         </div>
                     </div>

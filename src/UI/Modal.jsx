@@ -57,7 +57,7 @@ export default function Modal({ obj, open, setIsOpen }) {
                 size, qnty,
                 image
             }
-            fetch(`https://toys-server-ebon.vercel.app/cart`, {
+            fetch(`https://divasole-server.vercel.app/cart`, {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(addData)
@@ -128,8 +128,8 @@ export default function Modal({ obj, open, setIsOpen }) {
                                             </Dialog.Title>
 
                                             <Dialog.Description className='mt-6'>
-                                                <div className='flex mt-10 justify-between w-[95%] items-center'>
-                                                    <h1 className='text-xl lg:text-2xl text-zinc-950 font-semibold mt-5'>{`price ${price}-TK`}</h1>
+                                                <div className='flex mt-10 justify-between w-[100%] items-center'>
+                                                    <p className='text-xl lg:text-2xl text-zinc-950 font-semibold mt-5'>{`price ${price}-TK`}</p>
                                                     <div>
                                                         <p className='font-semibold'>Quantity:</p>
                                                         <div className='flex justify-center items-center px-2 bg-slate-200 gap-5 rounded-md'>
@@ -156,7 +156,7 @@ export default function Modal({ obj, open, setIsOpen }) {
 
                                             </Dialog.Description>
 
-                                            <div className="mt-20 space-x-4">
+                                            <div className="mt-20 space-x-4 lg:block flex text-center">
                                                 <button type="button" className=' uppercase bg-red-400 hover:bg-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700  border-0 font-semibold text-zinc-950' onClick={closeModal}>cancel</button>
                                                 <Link to={`/category/${_id}`} className='bg-gradient-to-l uppercase from-amber-500 to-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>View Detailes</Link>
                                                 <button onClick={addToCartHandler} className='bg-gradient-to-l uppercase from-amber-500 to-red-500 rounded-lg text-xs py-2.5 px-3 shadow-md shadow-zinc-700   border-0 font-semibold text-zinc-950 hover:bg-amber-600'>Add To Cart</button>

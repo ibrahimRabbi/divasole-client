@@ -4,8 +4,8 @@ const Footer = () => {
     return (
         <footer className="footer p-10 bg-slate-100 text-base-content">
             <aside>
-                <img width={170} loading='lazy' src="https://i.ibb.co/xL4thqs/logo.png" alt="LOGO" />
-            <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+                <img width={140} loading='lazy' src="https://i.ibb.co/4FTjRr1/divasole-Logo.png" alt="LOGO" />
+                <p className='font-semibold'>© 2023-2024, divaSole Emporium, Inc. or its affiliates<br />Providing reliable tech since 2023</p>
             </aside>
             <nav>
                 <header className="footer-title">Services</header>
